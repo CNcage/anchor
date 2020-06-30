@@ -22,6 +22,7 @@ class App extends React.Component {
             }
         }
         const body = JSON.stringify({
+            name: this.state.form_name,
             email: this.state.form_email,
             password: this.state.form_password
         })
