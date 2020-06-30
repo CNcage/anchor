@@ -1,0 +1,32 @@
+{
+  "name": "anchor",
+  "version": "1.0.0",
+  "description": "# Chatbot Diary for logging covid sypmtoms",
+  "main": "index.js",
+  "engines":{
+    "node": "12.16.0",
+    "npm": "6.14.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CNcage/anchor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CNcage/anchor/issues"
+  },
+  "homepage": "https://github.com/CNcage/anchor#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
