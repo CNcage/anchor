@@ -19,7 +19,7 @@ class Dashboard extends Component {
                     <img
                         alt="logo"
                         className="logo"
-                        src="https://files.slack.com/files-pri/T0117BU39LG-F017257V0DN/anchorfinal.png"
+                        src="{https://files.slack.com/files-pri/T0117BU39LG-F017257V0DN/anchorfinal.png}"
                     ></img>
                     <button className="button" onClick={this.onLogoutClick}>
                         Logout
