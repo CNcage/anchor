@@ -1,17 +1,18 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import "./Navbar.css"
 
-class Navbar extends Component {
-  render() {
+const Navbar = () => {
     return (
-      <div>
-        <nav>
-          <div>
-            <Link to="/" style={{fontFamily: "monospace" }}>HOME</Link>
-          </div>
-        </nav>
-      </div>
-    );
-  }
+        <div class="botnav">
+            <a class="active" href="Dashboard">
+                Dashboard
+            </a>
+
+            <a href="ChatBot">ChatBot</a>
+
+            <a href="Diary">Diary</a>
+        </div>
+    )
 }
-export default Navbar;
+
+export default Navbar
