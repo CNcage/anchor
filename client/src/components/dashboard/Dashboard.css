@@ -1,0 +1,101 @@
+.topnav {
+    background-color: #f9f9f9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: #353535;
+    justify-content: space-evenly;
+}
+
+/* Style the text inside the navigation bar */
+.topnav p {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0;
+    transition-duration: 0.4s;
+}
+
+.button {
+    background-color: royalblue;
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.5;
+}
+.login {
+    display: flex;
+}
+.logo {
+    height: 50px;
+}
+.wrapper {
+    display: flex;
+}
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+    border-radius: 25px;
+    margin: 10px;
+    width: 33.3333%;
+    height: 100%;
+}
+.card p {
+    margin-bottom: 45px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.diary {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+    border-radius: 25px;
+    margin: auto;
+    width: 66%;
+    height: 30vh;
+}
+
+.diary:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+#docBot {
+    height: 50px;
+}
+#docButton {
+    border-radius: 10px;
+    background-color: royalblue;
+    width: 100%;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    padding: 10px 0;
+}
+#book {
+    color: royalblue;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+#cardwrap {
+    height: 80%;
+}
