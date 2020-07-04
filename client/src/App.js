@@ -20,9 +20,7 @@ import DocBot from './components/docbot/DocBot';
 import Diary from './components/diary/Diary';
 
 //images
-import docBot1 from '../src/img/bot/docBot1.png';
-import docBot2 from '../src/img/bot/docBot2.png';
-import docBot3 from '../src/img/bot/docBot3.png'
+import DocBotPic from '../src/img/bot/docBot3.png'
 
 // Check for token to keep user logged in
 
@@ -44,9 +42,10 @@ if (localStorage.jwtToken) {
     }
 }
 
-let userName = "Appa";
 let newUser = false;
-let docBot = docBot3
+let docBot = DocBotPic
+let userName = "Appa"
+let loggedIn = "loggedinuser@email.com"
 
 class App extends Component {
 
@@ -58,43 +57,63 @@ class App extends Component {
         return `${date}/${month}/${year}`
     }
 
+    //console logging current state contents
+    submitLog = () => {
+        console.log(this.state)
+    }
+
+    //state, created during log to turn into a push request at the end
     state = {
-        id: "", // unique to the user logged in
-        date: "", // specific to the day it was written
+        _id: loggedIn, // unique to the user logged in
+        date: this.set_date(), // specific to the day it was written
         time: "", // the single specific entry  
-        timeofDay: "Morning",
-        mornFeels: "Updates incoming..",
-        mornTemp: "",
-        breathless: "",
-        tasteSmell: "",
-        cough: "",
-        dateNow: this.set_date(),
+        diary: []  // every dirary question and answer for that session
+    }
+
+    //functions to set the states
+    set_feeling = (update) => {
+        var newLog = this.state.diary.concat(
+            {
+                question: "How Are You Feeling?",
+                answer: update
+            });
+        this.setState({ diary: newLog })
+    }
+
+    set_temp = (update) => {
+        var newLog = this.state.diary.concat(
+            {
+                question: "What was your temp?",
+                answer: update
+            });
+        this.setState({ diary: newLog })
     }
 
     set_cough = (update) => {
-        this.setState({
-            cough: update
-        })
+        var newLog = this.state.diary.concat(
+            {
+                question: "Continuous Cough?",
+                answer: update
+            });
+        this.setState({ diary: newLog })
     }
+
     set_tasteSmell = (update) => {
-        this.setState({
-            tasteSmell: update
-        })
+        var newLog = this.state.diary.concat(
+            {
+                question: "Change in taste / smell?",
+                answer: update
+            });
+        this.setState({ diary: newLog })
     }
-    set_mornFeels = (update) => {
-        this.setState({
-            mornFeels: update
-        })
-    }
-    set_mornTemp = (update) => {
-        this.setState({
-            mornTemp: update
-        })
-    }
+
     set_breathless = (update) => {
-        this.setState({
-            breathless: update
-        })
+        var newLog = this.state.diary.concat(
+            {
+                question: "Breathless?",
+                answer: update
+            });
+        this.setState({ diary: newLog })
     }
 
     render() {
@@ -114,26 +133,23 @@ class App extends Component {
                             />
                         </Switch>
                         <DocBot
+                            docBot={docBot}
                             newUser={newUser}
-                            userName={userName}
+                            userName={this.userName}
+                            set_feeling={this.set_feeling}
+                            set_temp={this.set_temp}
+                            set_cough={this.set_cough}
+                            set_tasteSmell={this.set_tasteSmell}
                             set_date={this.set_date}
                             consoleLog={this.consoleLog}
-                            set_mornFeels={this.set_mornFeels}
-                            set_mornTemp={this.set_mornTemp}
                             set_breathless={this.set_breathless}
-                            set_tasteSmell={this.set_tasteSmell}
-                            set_cough={this.set_cough}
-                            docBot={docBot}
+                            submitLog={this.submitLog}
                         />
                         <Diary
                             userName={userName}
-                            breathless={this.state.breathless}
-                            timeofDay={this.state.timeofDay}
-                            mornFeels={this.state.mornFeels}
-                            mornTemp={this.state.mornTemp}
-                            dateNow={this.state.dateNow}
-                            tasteSmell={this.state.tasteSmell}
-                            cough={this.state.cough}
+                            date={this.state.date}
+                            time={this.state.time}
+                            diary={this.state.diary}
                         />
                     </div>
                 </Router>

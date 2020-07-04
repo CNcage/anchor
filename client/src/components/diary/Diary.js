@@ -1,30 +1,34 @@
 import React from 'react';
-import '../diary/Diary.css'
+import DiaryLog from './DiaryLog';
+import './Diary.css';
 import todIcon from '../../img/icons/icon_Morning.png';
 
-function Diary(props) {
+const Diary = ({ diary, userName, time, date }) => {
+
+    let diaryLogs = diary.map((diary, index) => {
+        return <DiaryLog
+            key={index}
+            question={diary.question}
+            answer={diary.answer}
+        />
+    })
+
     return (
-        <div>
-            <div id="diaryParent">
-                <div id="diaryTop">
-                    <div id="diaryName">{props.userName}'s Diary</div>
-                    <div id="currentDate">{props.dateNow}</div>
-                </div>
-                <div className="newHeader">
-                    <div className="diaryTitle">{props.timeofDay}:</div>
-                    <div><img className="todIcon" src={todIcon} alt="morning"></img></div>
-                </div>
-                <div className="report">
-                    <p>{props.mornFeels}</p>
-                    <p>{props.mornTemp}</p>
-                    <p>{props.breathless}</p>
-                    <p>{props.tasteSmell}</p>
-                    <p>{props.cough}</p>
-                </div>
+        <div id="diaryParent">
+            <div id="diaryTop">
+                <div id="diaryName">{userName}'s Diary </div>
+                <div id="currentDate">{date}</div>
+            </div>
+            <div className="newHeader">
+                <div className="diaryTitle">{time}</div>
+                <div><img className="todIcon" src={todIcon} alt="morning"></img></div>
+            </div>
+            <div className="report">
+                {diaryLogs}
             </div>
         </div>
     )
-}
 
+};
 
 export default Diary;
