@@ -3,9 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
 import pic1 from '../../img/1.png';
 import DocBotPic from '../../img/bot/docBot3.png'
-
-// icons
-import { FaRegLaughBeam } from "react-icons/fa";
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
+import { logoutUser } from "../../actions/authActions"
 
 let docBot = DocBotPic
 
@@ -32,31 +32,32 @@ const IconStyle = {
 }
 
 function DocBot(props) {
+    const { user } = props.auth
     const steps = [
         {
             id: 'goodmorning',
-            message: `Good morning ${props.userName}, how are you feeling?`,
+            message: `Good morning ${user.name}, how are you feeling?`,
             trigger: 'Morning_feeling',
         },
         {
             id: 'Morning_feeling',
             options: [
                 {
-                    value: 1, label: `I feel awesome! <i class="FaRegLaughBeam"></i>`,
+                    value: 1, label: 'Awesome!',
                     trigger: () => {
                         props.set_feeling(`I felt great`)
                         return 'Temp'
                     }
                 },
                 {
-                    value: 2, label: 'I could be better...',
+                    value: 2, label: 'Could be better...',
                     trigger: () => {
                         props.set_feeling(`I felt ok`)
                         return 'Temp'
                     }
                 },
                 {
-                    value: 3, label: 'I feel awful!',
+                    value: 3, label: 'Awful!',
                     trigger: () => {
                         props.set_feeling(`I felt awful`)
                         return 'Temp'
@@ -73,7 +74,7 @@ function DocBot(props) {
         },
         {
             id: 'Temp',
-            message: `Is your temperature at or above 37.8°C?`,
+            message: `Is your temperature above 37.8°C?`,
             trigger: 'tempOption',
         },
         {
@@ -97,7 +98,7 @@ function DocBot(props) {
         },
         {
             id: 'lowerTemp',
-            message: `Great! Your temperature is within the 'normal' range, Would you like some more information?`,
+            message: `Great! Your temperature is within the 'normal' range, Would you like more information?`,
             trigger: 'summeryOption',
         },
         {
@@ -121,7 +122,7 @@ function DocBot(props) {
         },
         {
             id: 'highTemp2',
-            message: `Are you experiencing any of these symptoms? (select each symptom for more information!)`,
+            message: `Are you experiencing any of these symptoms? (click each symptom for more info)`,
             trigger: 'symptoms',
         },
         //////////////////////////////////////////////////////////loss of Taste or Smell
@@ -132,7 +133,7 @@ function DocBot(props) {
         },
         {
             id: 'log_taste',
-            message: `Would you like to log your loss of smell and/or taste as a symptom?`,
+            message: `Would you like to log your loss of smell and/or taste?`,
             trigger: 'log_taste0',
         },
         {
@@ -154,12 +155,13 @@ function DocBot(props) {
         //////////////////////////////////////////////////////////loss of Taste or Smell
         {
             id: 'cough',
-            message: `A new, continuous cough means that you are coughing a lot for more than an hour, or 3 or more coughing episodes in 24 hours. If you usually have a cough, it may be worse than usual.`,
+            message: `A new, continuous cough means that you are coughing a lot for more than an hour, or 3 or more coughing episodes in 24 hours.
+      If you usually have a cough, it may be worse than usual.`,
             trigger: 'log_cough',
         },
         {
             id: 'log_cough',
-            message: `Would you like to log a continuous cough as a symptom?`,
+            message: `Would you like to log a continuous cough?`,
             trigger: 'log_cough0',
         },
         {
@@ -202,7 +204,7 @@ function DocBot(props) {
         },
         {
             id: 'none',
-            message: `Okay, that's good! Just remember...`,
+            message: `Ok that's good, just remember...`,
             trigger: 'summery',
         },
         ////////////////////////////////////////////////////////////breathless!
@@ -245,7 +247,7 @@ function DocBot(props) {
         ////////////////////////////////////////////////////////////Oxygen!
         {
             id: 'oxygenLevel',
-            message: `Is your oxygen level displaying as 95% or over?`,
+            message: `Oxygen level over 95%`,
             trigger: 'oxyChoice',
         },
         {
@@ -264,7 +266,7 @@ function DocBot(props) {
         ////////////////////////////////////////////////////////////can't speak?
         {
             id: 'cantSpeak',
-            message: `URGENT! If you cannot speak a full sentence or if your lips are turning blue, reply 'Yes'`,
+            message: `URGENT! If you cannot speak a full sentence or if your lips are turning blue reply Yes`,
             trigger: 'speakChoice',
         },
         {
@@ -283,7 +285,7 @@ function DocBot(props) {
         ////////////////////////////////////////////////////////////log oxygen?!
         {
             id: 'log_oxyQ',
-            message: `Great, would you still like to log your shortness of breath as a symptom?`,
+            message: `Great, would you still like to log you had shorness of breath`,
             trigger: 'log_oxyO',
         },
         {
@@ -304,19 +306,19 @@ function DocBot(props) {
         },
         {
             id: 'check1',
-            message: `Thanks, that's been logged for you. Do you have any more symptoms?`,
+            message: `That's logged. Do you have any more symptoms?`,
             trigger: 'moreSymptoms',
         },
         ////////////////////////////////////////////////////////////emergancy notification!
         {
             id: 'submitNotification',
-            message: `Stay calm, ${props.userName}. Your emergency contact has been notified. Help is on the way.`,
+            message: `Stay calm. Your emergancy contact has been notified. Help is on the way`,
             end: true,
         },
         /////////////////////////////////////////////////////////////help!
         {
             id: 'Urgent',
-            message: `Are you struggling to breathe?`,
+            message: `Are you struggling to breathe`,
             trigger: 'UrgentQ1',
         },
         {
@@ -334,7 +336,7 @@ function DocBot(props) {
         },
         {
             id: 'Urgent1_yes',
-            message: `Can you speak a full sentence?`,
+            message: `Can you speak a full sentence`,
             trigger: 'UrgentQ2',
         },
         {
@@ -352,7 +354,7 @@ function DocBot(props) {
         },
         {
             id: 'Urgent2_yes',
-            message: `Are your lips blue?`,
+            message: `Are your lips blue`,
             trigger: 'UrgentQ3',
         },
         {
@@ -370,24 +372,22 @@ function DocBot(props) {
         },
         {
             id: 'contactEmergency',
-            message: `Okay, try and stay calm, ${props.userName}.`,
-            // message: `Submitting Notification LOCAL`,
+            message: `Submitting Notification LOCAL`,
             trigger: 'contactEmergency2'
         },
         {
             id: 'contactEmergency2',
-            message: `Your emergency contact has been notified. Help is on the way.`,
+            message: `Stay calm. Your emergency contact has been notified. Help is on the way`,
             end: true,
         },
         {
             id: 'contactEmergency999',
-            message: `Okay, try and stay calm, ${props.userName}.`,
-            // message: `Submitting Notification 999`,
+            message: `Submitting Notification 999`,
             trigger: 'contactEmergency9992'
         },
         {
             id: 'contactEmergency9992',
-            message: `Stay calm. Your emergency contact has been notified. Help is on the way.`,
+            message: `Stay calm. Your emergency contact has been notified. Help is on the way`,
             end: true,
         },
         ////////////////////////////////////////////////////////////summery!
@@ -398,7 +398,7 @@ function DocBot(props) {
         },
         {
             id: 'summery1',
-            message: `This means you must not leave your home. take public transport or make contact with anyone outside your household.`,
+            message: `This means you must not leave your home. take public transport or make contact with anyone outside your household`,
             trigger: 'summery2',
         },
         {
@@ -408,19 +408,19 @@ function DocBot(props) {
         },
         {
             id: 'summery3',
-            message: `For any further help...`,
+            message: `for further help..`,
             trigger: 'siteLink1',
         },
         {
             id: 'siteLink1',
             component: (
-                <div> <a href="https://111.nhs.uk/covid-19/">NHS 111 Online Coronavirus Service</a></div>
+                <div> <a href="https://111.nhs.uk/covid-19/">NHS 111 online coronovirus Service</a></div>
             ),
             trigger: 'end1',
         },
         {
             id: 'end1',
-            message: `Don't forget to click 'log' this session!`,
+            message: `don't forget to click log this session`,
             trigger: () => {
                 props.submitLog()
             },
@@ -440,7 +440,7 @@ function DocBot(props) {
         },
         {
             id: 'end3',
-            message: `Thanks, this diary entry has been saved! See you soon!'`,
+            message: `Thanks, this diary entry has been saved! Come back any time'`,
             trigger: () => {
                 props.submitLog()
             },
@@ -455,7 +455,7 @@ function DocBot(props) {
             botAvatar={docBot}
             bubbleStyle={BubbleStyle}
             avatarStyle={IconStyle}
-            headerTitle="DocBot"
+            headerTitle="Doc Bot"
             placeholder="Reply..."
             floating={false}
             enableSmoothScroll={true}
@@ -464,4 +464,13 @@ function DocBot(props) {
 
 }
 
-export default DocBot;
+DocBot.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+})
+
+export default connect(mapStateToProps, { logoutUser })(DocBot)

@@ -4,11 +4,9 @@ import "./Navbar.css"
 const Navbar = () => {
     return (
         <div class="botnav">
-            <a class="active" href="Dashboard">
-                Dashboard
-            </a>
+            <a class="active" href="Dashboard">Dashboard</a>
 
-            <a href="ChatBot">ChatBot</a>
+            <a href="/livediary">ChatBot</a>
 
             <a href="Diary">Diary</a>
         </div>
