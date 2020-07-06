@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/CNcage/anchor#readme",
   "dependencies": {
+    "animate.css": "^4.1.0",
+    "aos": "^3.0.0-beta.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
@@ -37,6 +39,8 @@
     "mongoose": "^5.9.21",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-card-flip": "^1.0.10",
+    "react-router-dom": "^5.2.0",
     "validator": "^13.1.1"
   },
   "devDependencies": {

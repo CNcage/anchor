@@ -1,0 +1,68 @@
+.wrapper {
+    background: rgb(67, 127, 175);
+    background: linear-gradient(
+        90deg,
+        rgba(67, 127, 175, 1) 0%,
+        rgba(199, 188, 204, 1) 100%
+    );
+
+    width: 100%;
+    height: 80vh;
+}
+#signUp {
+    margin: auto;
+    width: 33.3333%;
+    height: 50vh;
+    border-radius: 5%;
+}
+input {
+    width: 20%;
+}
+#form {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.signup {
+    clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+    width: 70%;
+    background-color: white;
+}
+button {
+    background-color: white;
+    color: black;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease 0s;
+}
+button:hover {
+    opacity: 1;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="name"] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    transition: all 0.3s ease 0s;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="name"]:focus {
+    background-color: rgb(212, 212, 212);
+    outline: none;
+}
+@media screen and (max-width: 300px) {
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
