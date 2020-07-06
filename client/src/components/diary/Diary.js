@@ -2,6 +2,7 @@ import React from 'react';
 import DiaryLog from './DiaryLog';
 import './Diary.css';
 import todIcon from '../../img/icons/icon_Morning.png';
+import CardFlip from './CardFlip';
 
 const Diary = ({ diary, userName, time, date }) => {
 
@@ -15,6 +16,7 @@ const Diary = ({ diary, userName, time, date }) => {
 
     return (
         <div id="diaryParent">
+            <div id="diaryCard"><CardFlip /></div>
             <div id="diaryTop">
                 <div id="diaryName">{userName}'s Diary </div>
                 <div id="currentDate">{date}</div>
