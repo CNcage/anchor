@@ -1,0 +1,23 @@
+#front {
+    position: fixed;
+    bottom: 10px;
+    left: 600px;
+    height: 400px;
+    width: 300px;
+    border-radius: 5%;
+    /* unique */
+    background-color: crimson;
+    color: cornsilk;
+}
+
+#back {
+    position: fixed;
+    bottom: 10px;
+    left: 600px;
+    height: 400px;
+    width: 300px;
+    border-radius: 5%;
+    /* unique */
+    background-color: darkblue;
+    color: cornsilk;
+}

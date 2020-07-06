@@ -2,9 +2,13 @@ import React from 'react';
 import DiaryLog from './DiaryLog';
 import './Diary.css';
 import todIcon from '../../img/icons/icon_Morning.png';
+
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
+
+import CardFlip from './CardFlip';
+
 
 class Diary extends React.Component {
 
@@ -91,29 +95,19 @@ class Diary extends React.Component {
         console.log(jsonifyDiary)
         const { user } = this.props.auth
 
-        return (
-            <div>
-                <form method="POST" action="/diary">
-                    <input id="email" name="email" type="hidden" value={user.email} />
-                    <input id="diary" name="diary" type="hidden" value={jsonifyDiary} />
-                    <input id="date" name="date" type="hidden" value={this.state.date} />
-                    <input id="time" name="time" type="hidden" value={this.state.time} />
-                    <input type="submit" value="Save" />
-                </form>
-
-                <div id="diaryParent">
-                    <div id="diaryTop">
-                        <div id="diaryName">{user.name}'s Diary </div>
-                        <div id="currentDate">{this.state.date}</div>
-                    </div>
-                    <div className="newHeader">
-                        <div className="diaryTitle">{this.state.time}</div>
-                        <div><img className="todIcon" src={todIcon} alt="morning"></img></div>
-                    </div>
-                    <div className="report">
-                        {this.state.diaryLogs}
-                    </div>
-                </div>
+    return (
+        <div id="diaryParent">
+            <div id="diaryCard"><CardFlip /></div>
+            <div id="diaryTop">
+                <div id="diaryName">{userName}'s Diary </div>
+                <div id="currentDate">{date}</div>
+            </div>
+            <div className="newHeader">
+                <div className="diaryTitle">{time}</div>
+                <div><img className="todIcon" src={todIcon} alt="morning"></img></div>
+            </div>
+            <div className="report">
+                {diaryLogs}
             </div>
         )
 
