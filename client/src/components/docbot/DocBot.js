@@ -37,34 +37,34 @@ function DocBot(props) {
                     value: 1,
                     label: "Awesome",
                     trigger: () => {
-                        props.set_mornFeels(`I felt great`)
-                        props.set_date()
-                        return "Temp"
-                    },
+
+                        props.set_feeling(`I felt great`)
+                        return 'Temp'
+                    }
                 },
                 {
                     value: 2,
                     label: "Could be better",
                     trigger: () => {
-                        props.set_mornFeels(`I felt ok`)
-                        return "Temp"
-                    },
+                        props.set_feeling(`I felt ok`)
+                        return 'Temp'
+                    }
                 },
                 {
                     value: 3,
                     label: "Awful",
                     trigger: () => {
-                        props.set_mornFeels(`I felt awful`)
-                        return "Temp"
-                    },
+                        props.set_feeling(`I felt awful`)
+                        return 'Temp'
+                    }
                 },
                 {
                     value: 4,
                     label: "I Need Help",
                     trigger: () => {
-                        props.set_mornFeels(`I Needed Help`)
-                        return "Urgent"
-                    },
+                        props.set_feeling(`I Needed Help`)
+                        return 'Urgent'
+                    }
                 },
             ],
         },
@@ -80,17 +80,17 @@ function DocBot(props) {
                     value: 1,
                     label: "Yes",
                     trigger: () => {
-                        props.set_mornTemp(`My temp was over 37.8°C`)
-                        return "highTemp"
-                    },
+                        props.set_temp(`My temp was over 37.8°C`)
+                        return 'highTemp'
+                    }
                 },
                 {
                     value: 2,
                     label: "No",
                     trigger: () => {
-                        props.set_mornTemp(`My temp was under 37.8°C`)
-                        return "lowerTemp"
-                    },
+                        props.set_temp(`My temp was under 37.8°C`)
+                        return 'lowerTemp'
+                    }
                 },
             ],
         },
@@ -447,29 +447,50 @@ function DocBot(props) {
                     </a>
                 </div>
             ),
-            end: true,
+            trigger: 'end1',
         },
         {
-            id: "end1",
-            message: `Ok, check back in later!`,
+            id: 'end1',
+            message: `don't forget to click log this session`,
+            trigger: () => {
+                props.submitLog()
+            },
+            trigger: 'end2',
+        },
+        {
+            id: 'end2',
+            options: [
+                {
+                    value: 1, label: 'Log Now',
+                    trigger: () => {
+                        props.submitLog()
+                        return 'end3'
+                    }
+                }
+            ]
+        },
+        {
+            id: 'end3',
+            message: `Thanks, this diary entry has been saved! Come back any time'`,
+            trigger: () => {
+                props.submitLog()
+            },
             end: true,
         },
     ]
-
-    return (
-        <ThemeProvider theme={theme}>
-            <ChatBot
-                steps={steps}
-                userAvatar={pic1}
-                botAvatar={props.docBot}
-                bubbleStyle={BubbleStyle}
-                avatarStyle={IconStyle}
-                headerTitle="Doc Bot"
-                placeholder="Reply..."
-                floating={false}
-            />
-        </ThemeProvider>
-    )
+    return <ThemeProvider theme={theme}>
+        < ChatBot
+            steps={steps}
+            userAvatar={pic1}
+            botAvatar={props.docBot}
+            bubbleStyle={BubbleStyle}
+            avatarStyle={IconStyle}
+            headerTitle="Doc Bot"
+            placeholder="Reply..."
+            floating={false}
+            enableSmoothScroll={true}
+        />
+    </ThemeProvider >
 }
 
 export default DocBot

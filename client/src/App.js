@@ -14,16 +14,8 @@ import Login from "./components/auth/Login"
 
 import PrivateRoute from "./components/private-route/PrivateRoute"
 import Dashboard from "./components/dashboard/Dashboard"
-
-import DocBot from "./components/docbot/DocBot"
-import Diary from "./components/diary/Diary"
-
-//images
-import docBot1 from "../src/img/bot/docBot1.png"
-import docBot2 from "../src/img/bot/docBot2.png"
-import docBot3 from "../src/img/bot/docBot3.png"
-
 import "animate.css/animate.css"
+
 
 // Check for token to keep user logged in
 
@@ -45,59 +37,8 @@ if (localStorage.jwtToken) {
     }
 }
 
-let userName = "Appa"
-let newUser = false
-let docBot = docBot3
-
 class App extends Component {
-    set_date() {
-        let newDate = new Date()
-        let date = newDate.getDate()
-        let month = newDate.getMonth() + 1
-        let year = newDate.getFullYear()
-        return `${date}/${month}/${year}`
-    }
-
-    state = {
-        id: "", // unique to the user logged in
-        date: "", // specific to the day it was written
-        time: "", // the single specific entry
-        timeofDay: "Morning",
-        mornFeels: "Updates incoming..",
-        mornTemp: "",
-        breathless: "",
-        tasteSmell: "",
-        cough: "",
-        dateNow: this.set_date(),
-    }
-
-    set_cough = (update) => {
-        this.setState({
-            cough: update,
-        })
-    }
-    set_tasteSmell = (update) => {
-        this.setState({
-            tasteSmell: update,
-        })
-    }
-    set_mornFeels = (update) => {
-        this.setState({
-            mornFeels: update,
-        })
-    }
-    set_mornTemp = (update) => {
-        this.setState({
-            mornTemp: update,
-        })
-    }
-    set_breathless = (update) => {
-        this.setState({
-            breathless: update,
-        })
-    }
-
-    render() {
+render() {
         return (
             <Provider store={store}>
                 <Router>
@@ -105,6 +46,7 @@ class App extends Component {
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/login" component={Login} />
+                        <Route exact path="/livediary" component={LiveDiary} />
                         <Switch>
                             <PrivateRoute
                                 exact
