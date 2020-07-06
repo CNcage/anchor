@@ -1,0 +1,41 @@
+*   [33m5332a8d[m[33m ([m[1;36mHEAD -> [m[1;32mandre02[m[33m, [m[1;32mmaster[m[33m)[m Merge pull request #10 from CNcage/rob01
+[31m|[m[32m\[m  
+[31m|[m * [33m97f092b[m added docbot
+[31m|[m[31m/[m  
+*   [33m171eef3[m Merge pull request #9 from CNcage/dashboard
+[33m|[m[34m\[m  
+[33m|[m * [33m9274fa0[m added dashboard styling and navbar
+[33m|[m[33m/[m  
+*   [33mbba02c9[m Merge pull request #8 from CNcage/loginAuth
+[35m|[m[36m\[m  
+[35m|[m * [33m4a512e3[m login auth files set up
+[35m|[m[35m/[m  
+*   [33m9fce2a5[m Merge pull request #7 from CNcage/reactUpdate
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m62d4a22[m React Structure, and Reg.js
+[1;31m|[m[1;31m/[m  
+*   [33m009cb75[m Merge pull request #6 from CNcage/formchanges2
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m02fdb93[m changes made to app.js
+[1;33m|[m[1;33m/[m  
+*   [33m2491139[m Merge pull request #5 from CNcage/formchanges
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33m93d0751[m changes made to app.js
+[1;35m|[m[1;35m/[m  
+*   [33m6765219[m Merge pull request #4 from CNcage/hotfix/user_model_validation
+[31m|[m[32m\[m  
+[31m|[m * [33m9eb0384[m Name fields added
+[31m|[m[31m/[m  
+*   [33mb1fd6c2[m Merge pull request #3 from CNcage/setuppart2
+[33m|[m[34m\[m  
+[33m|[m * [33m74f9717[m Auto stash before merge of "master" and "origin/master"
+[33m|[m[33m/[m  
+*   [33mde1a8c3[m Merge pull request #2 from CNcage/setup
+[35m|[m[36m\[m  
+[35m|[m * [33m5b079f9[m setup completed
+[35m|[m[35m/[m  
+*   [33m6fdd281[m Merge pull request #1 from CNcage/paddy01
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m651628b[m updated the readme
+[1;31m|[m[1;31m/[m  
+* [33m29f82ba[m Initial commit

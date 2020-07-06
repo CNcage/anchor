@@ -6,7 +6,6 @@ let newUser = false;
 let docBot = docBot3
 
 class App extends Component {
-
     set_date() {
         let newDate = new Date()
         let date = newDate.getDate();
