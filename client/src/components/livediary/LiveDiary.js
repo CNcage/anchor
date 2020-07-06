@@ -1,17 +1,11 @@
 import React from 'react';
-import DiaryLog from './DiaryLog';
-import './Diary.css';
-import todIcon from '../../img/icons/icon_Morning.png';
-import PropTypes from "prop-types"
-import { connect } from "react-redux"
-import { logoutUser } from "../../actions/authActions"
-import CardFlip from './CardFlip';
+import DocBot from './DocBot';
+import Diary from './Diary';
+import DiaryLog from './DiaryLog'
 
-class Diary extends React.Component {
 
-    //state, created during log to turn into a push request at the end
+class LiveDiary extends React.Component {
     state = {
-        email: "", // unique to the user logged in
         date: this.set_date(), // specific to the day it was written
         time: "", // the single specific entry  
         diary: []  // every dirary question and answer for that session
@@ -88,38 +82,26 @@ class Diary extends React.Component {
         />
     })
     render() {
-        const jsonifyDiary = JSON.stringify(this.state.diary);
-        console.log(jsonifyDiary)
-        const { user } = this.props.auth;
-
         return (
-            <div id="diaryParent">
-                <div id="diaryCard"><CardFlip /></div>
-                <div id="diaryTop">
-                    <div id="diaryName">{userName}'s Diary </div>
-                    <div id="currentDate">{date}</div>
-                </div>
-                <div className="newHeader">
-                    <div className="diaryTitle">{time}</div>
-                    <div><img className="todIcon" src={todIcon} alt="morning"></img></div>
-                </div>
-                <div className="report">
-                    {diaryLogs}
-                </div>
+            <div>
+                <DocBot
+                    set_feeling={this.set_feeling}
+                    set_temp={this.set_temp}
+                    set_cough={this.set_cough}
+                    set_tasteSmell={this.set_tasteSmell}
+                    set_date={this.set_date}
+                    consoleLog={this.consoleLog}
+                    set_breathless={this.set_breathless}
+                    submitLog={this.submitLog}
+                />
+                <Diary
+                    date={this.state.date}
+                    time={this.state.time}
+                    diary={this.state.diary}
+                />
             </div>
         )
-
     }
 };
 
-
-Diary.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
-}
-
-const mapStateToProps = (state) => ({
-    auth: state.auth,
-})
-
-export default connect(mapStateToProps, { logoutUser })(Diary)
+export default LiveDiary;

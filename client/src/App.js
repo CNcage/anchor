@@ -14,6 +14,7 @@ import Login from "./components/auth/Login"
 
 import PrivateRoute from "./components/private-route/PrivateRoute"
 import Dashboard from "./components/dashboard/Dashboard"
+import LiveDiary from "./components/livediary/LiveDiary"
 import "animate.css/animate.css"
 
 
@@ -38,7 +39,7 @@ if (localStorage.jwtToken) {
 }
 
 class App extends Component {
-render() {
+    render() {
         return (
             <Provider store={store}>
                 <Router>

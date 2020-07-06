@@ -5,7 +5,7 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  date: { type: Date, default: Date.now }
+  diarys: { type: Array, required: true, default: [] },
 });
 
 module.exports = model('users', userSchema);

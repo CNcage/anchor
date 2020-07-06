@@ -90,7 +90,7 @@ class Diary extends React.Component {
     render() {
         const jsonifyDiary = JSON.stringify(this.state.diary);
         console.log(jsonifyDiary)
-        const { user } = this.props.auth;
+        const { user } = this.props.auth
 
         return (
             <div id="diaryParent">
@@ -106,20 +106,19 @@ class Diary extends React.Component {
                 <div className="report">
                     {diaryLogs}
                 </div>
-            </div>
         )
 
     }
-};
+}
 
 
 Diary.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
+                    logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = (state) => ({
-    auth: state.auth,
+                    auth: state.auth,
 })
 
-export default connect(mapStateToProps, { logoutUser })(Diary)
+export default connect(mapStateToProps, { logoutUser})(Diary)
