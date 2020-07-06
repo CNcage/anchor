@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
+import Logo from "../../img/icons/anchorFinal.png"
 import "./Dashboard.css"
 
 class Dashboard extends Component {
@@ -9,56 +10,73 @@ class Dashboard extends Component {
         e.preventDefault()
         this.props.logoutUser()
     }
+    responsiveNav() {
+        let x = document.getElementById("myTopnav")
+        if (x.className === "topnav") {
+            x.className += " responsive"
+        } else {
+            x.className = "topnav"
+        }
+    }
 
     render() {
         const { user } = this.props.auth
         return (
             <div>
-                <div className="topnav">
-                    <p>Welcome, {user.name}</p>
-                    <img
-                        alt="logo"
-                        className="logo"
-                        src="{https://files.slack.com/files-pri/T0117BU39LG-F017257V0DN/anchorfinal.png}"
-                    ></img>
-                    <button className="button" onClick={this.onLogoutClick}>
-                        Logout
-                    </button>
+                <div className="topnav" id="myTopnav">
+                    <div className="navLogo">
+                        <img alt="logo" className="logo" src={Logo}></img>
+                        <p>ANCHOR HEALTH</p>
+                    </div>
+                    <div className="navLinks">
+                        <a class="active" href="Dashboard">
+                            Dashboard
+                        </a>
+
+                        <a href="ChatBot">ChatBot</a>
+
+                        <a href="Diary">Diary</a>
+                    </div>
+
+                    <div className="navLogout">
+                        <p>
+                            Welcome, <b>{user.name}</b>
+                        </p>
+
+                        <button className="button" onClick={this.onLogoutClick}>
+                            Logout
+                        </button>
+                        <a
+                            href="javascript:void(0);"
+                            class="icon"
+                            onclick="myFunction()"
+                        >
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
                 </div>
-                <h1>Welcome to ANCHOR HEALTH</h1>
-                <div className="wrapper">
-                    <div className="card">
-                        <div id="cardwrap">
-                            <img
-                                id="docBot"
-                                src="https://flash.force.com/contactus/resource/chatbot_images/images/CTA.png"
-                                alt="docBot"
-                            ></img>
-                            <h1>DocBot</h1>
-                            <p>Hi!{user.name} Are you ready to connect?</p>
-                            <div>
-                                <button id="docButton">Connect</button>
+                <div className="body">
+                    <h1>Welcome</h1>
+                    <div className="cardwrapper">
+                        <div className="card1">
+                            <div className="cardTop"></div>
+                            <div className="cardContent">
+                                <div className="cardHeader">
+                                    <img
+                                        id="cardImg"
+                                        src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/logs.png"
+                                    ></img>
+                                    <p>Total logs</p>
+                                </div>
+                                <div className="cardText">
+                                    <h2>50</h2>
+                                </div>
                             </div>
+                            <button className="cardBottom">Connect</button>
                         </div>
-                    </div>
-                    <div className="card">
-                        <div id="cardwrap">
-                            <div id="book"></div>
-                            <h1>35</h1>
-                            <p>Logs this week</p>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div id="cardwrap">
-                            <h1>3 Times</h1>
-                            <p>You felt breathless</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="diary">
-                    <div id="cardwrap">
-                        <h1>Diary</h1>
-                        <p>Monday</p>
+
+                        <div className="card1"></div>
+                        <div className="card1"></div>
                     </div>
                 </div>
             </div>
