@@ -12,10 +12,10 @@
     z-index: 1;
     transition-duration: 0.4s;
 }
-.scroll {
-    background-color: hsl(155, 63%, 42%);
-}
 
+.hero-text img {
+    max-width: 130px;
+}
 /* Style the text inside the navigation bar */
 .landingnav a {
     float: left;

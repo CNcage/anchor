@@ -17,7 +17,6 @@ import Dashboard from "./components/dashboard/Dashboard"
 import LiveDiary from "./components/livediary/LiveDiary"
 import "animate.css/animate.css"
 
-
 // Check for token to keep user logged in
 
 if (localStorage.jwtToken) {
