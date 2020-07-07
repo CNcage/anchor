@@ -11,7 +11,6 @@ class Diary extends React.Component {
     render() {
         const jsonifyDiary = JSON.stringify(this.state.diary)
         console.log(jsonifyDiary)
-        const { user } = this.props.auth
 
         return (
             <div id="diaryParent">

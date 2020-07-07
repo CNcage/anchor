@@ -1,12 +1,13 @@
-.hero-imagesignup {
+.hero-imagelogin {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("https://images.pexels.com/photos/4084979/pexels-photo-4084979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+        url("https://images.pexels.com/photos/583846/pexels-photo-583846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+
     transition: 100ms ease-in-out;
     margin-bottom: 0px;
 }
@@ -21,17 +22,24 @@ input[type="email"] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+.buttonscontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 75px 0px;
+}
 
-.signupwrapper {
+.loginwrapper {
     display: flex;
     flex-direction: column;
     margin: auto;
     width: 500px;
 }
-.signupwrapper h2 {
+.loginwrapper h2 {
     display: flex;
 }
-.signupwrapper button {
+.loginwrapper button {
     background-color: rgb(40, 175, 118);
     color: white;
     padding: 14px 20px;
@@ -90,11 +98,4 @@ span {
     border-radius: 5px;
     color: #712b29;
     margin: 10px 0px;
-}
-.btnWrap {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    margin: 35px 0px;
 }

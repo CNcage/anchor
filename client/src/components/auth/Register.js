@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 import { registerUser } from "../../actions/authActions"
 import classnames from "classnames"
 import "./Resgister.css"
+import Logo from "../../img/icons/anchorFinal.png"
 
 class Register extends Component {
     state = {
@@ -49,94 +50,100 @@ class Register extends Component {
     render() {
         const { errors } = this.state
         return (
-            <div className="wrapper">
-                <div id="signUp">
-                    <div className="col-s8-offset-s2">
-                        <Link to="/">
-                            <button>Back to home</button>
-                        </Link>
-                        <div style={{ paddingLeft: "11.250px" }}>
-                            <h4>
-                                <b>Register</b> below
-                            </h4>
-                            <p>
-                                Already have an account?{" "}
-                                <Link to="/login">Log in</Link>
-                            </p>
+            <div className="hero-imagesignup">
+                <div className="animate__animated animate__fadeIn animate__delay-100ms">
+                    <div className="hero-text">
+                        <img src={Logo} alt="mainlogo"></img>
+                        <div className="signupwrapper">
+                            <div id="signUp">
+                                <div>
+                                    <div>
+                                        <h2>Register</h2>
+                                    </div>
+                                    <form noValidate onSubmit={this.onSubmit}>
+                                        <div>
+                                            <span>{errors.name}</span>
+                                            <input
+                                                onChange={this.onChange}
+                                                value={this.state.name}
+                                                error={errors.name}
+                                                id="name"
+                                                type="text"
+                                                placeholder="Name"
+                                                className={classnames("", {
+                                                    invalid: errors.name,
+                                                })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <span>{errors.email}</span>
+                                            <input
+                                                onChange={this.onChange}
+                                                value={this.state.email}
+                                                error={errors.email}
+                                                id="email"
+                                                type="email"
+                                                placeholder="Email"
+                                                className={classnames("", {
+                                                    invalid: errors.name,
+                                                })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <span>{errors.password}</span>
+                                            <input
+                                                onChange={this.onChange}
+                                                value={this.state.password}
+                                                error={errors.password}
+                                                id="password"
+                                                type="password"
+                                                placeholder="Password"
+                                                className={classnames("", {
+                                                    invalid: errors.name,
+                                                })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <span>{errors.password2}</span>
+                                            <input
+                                                onChange={this.onChange}
+                                                value={this.state.password2}
+                                                error={errors.password2}
+                                                id="password2"
+                                                type="password"
+                                                placeholder="Confirm Password"
+                                                className={classnames("", {
+                                                    invalid: errors.name,
+                                                })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <div className="btnWrap">
+                                                <Link to="/">
+                                                    <button id="backBtn">
+                                                        Back to home
+                                                    </button>
+                                                </Link>
+                                                <button
+                                                    className="signupButton"
+                                                    type="submit"
+                                                >
+                                                    Sign up
+                                                </button>
+                                            </div>
+                                            <p>
+                                                Already have an account?{" "}
+                                                <Link to="/login">
+                                                    <div>
+                                                        <button>Log in</button>
+                                                    </div>
+                                                </Link>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.name}
-                                    error={errors.name}
-                                    id="name"
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.name,
-                                    })}
-                                />
-                                <label htmlFor="name">Name</label>
-                                <span>{errors.name}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.email}
-                                    error={errors.email}
-                                    id="email"
-                                    type="email"
-                                    className={classnames("", {
-                                        invalid: errors.name,
-                                    })}
-                                />
-                                <label htmlFor="email">Email</label>
-                                <span>{errors.email}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password}
-                                    error={errors.password}
-                                    id="password"
-                                    type="password"
-                                    className={classnames("", {
-                                        invalid: errors.name,
-                                    })}
-                                />
-                                <label htmlFor="password">Password</label>
-                                <span>{errors.password}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password2}
-                                    error={errors.password2}
-                                    id="password2"
-                                    type="password"
-                                    className={classnames("", {
-                                        invalid: errors.name,
-                                    })}
-                                />
-                                <label htmlFor="password2">
-                                    Confirm Password
-                                </label>
-                                <span>{errors.password2}</span>
-                            </div>
-                            <div style={{ paddingLeft: "11.250px" }}>
-                                <button
-                                    style={{
-                                        width: "150px",
-                                        borderRadius: "3px",
-                                        etterSpacing: "1.5px",
-                                        marginTop: "1rem",
-                                    }}
-                                    type="submit"
-                                >
-                                    Sign up
-                                </button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
