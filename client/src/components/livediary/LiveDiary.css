@@ -1,0 +1,4 @@
+.diarywrapper {
+    display: flex;
+    justify-content: space-evenly;
+}

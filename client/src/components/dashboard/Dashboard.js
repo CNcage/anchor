@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
 import Logo from "../../img/icons/anchorFinal.png"
 import "./Dashboard.css"
+import { Link } from "react-router-dom"
+import Navbar from "../layout/Navbar"
 
 class Dashboard extends Component {
     onLogoutClick = (e) => {
@@ -23,43 +25,12 @@ class Dashboard extends Component {
         const { user } = this.props.auth
         return (
             <div>
-                <div className="topnav" id="myTopnav">
-                    <div className="navLogo">
-                        <img alt="logo" className="logo" src={Logo}></img>
-                        <p>ANCHOR HEALTH</p>
-                    </div>
-                    <div className="navLinks">
-                        <a class="active" href="Dashboard">
-                            Dashboard
-                        </a>
-
-                        <a href="ChatBot">ChatBot</a>
-
-                        <a href="Diary">Diary</a>
-                    </div>
-
-                    <div className="navLogout">
-                        <p>
-                            Welcome, <b>{user.name}</b>
-                        </p>
-
-                        <button className="button" onClick={this.onLogoutClick}>
-                            Logout
-                        </button>
-                        <a
-                            href="javascript:void(0);"
-                            class="icon"
-                            onclick="myFunction()"
-                        >
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
-                </div>
+                <Navbar />
                 <div className="body">
                     <h1>Welcome</h1>
                     <div className="cardwrapper">
                         <div className="card1">
-                            <div className="cardTop"></div>
+                            {/* <div className="cardTop"></div> */}
                             <div className="cardContent">
                                 <div className="cardHeader">
                                     <img

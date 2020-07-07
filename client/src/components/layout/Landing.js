@@ -16,21 +16,9 @@ const Landing = () => {
     }, [])
     return (
         <div style={{ height: "80vh" }}>
-            <div className="landingnav">
-                <div className="landingnavLogo">
-                    <img alt="logo" className="logo" src={Logo}></img>
-                    <p>ANCHOR HEALTH</p>
-                </div>
-
-                <div className="navLogout">
-                    <button className="loginbtn">
-                        <BsFillPersonFill size="15px" />
-                        Login
-                    </button>
-                </div>
-            </div>
             <div className="hero-image">
                 <div className="hero-text">
+                    <img src={Logo}></img>
                     <h1 class="animate__animated animate__fadeIn animate__delay-1s">
                         Anchor Health
                     </h1>
@@ -76,84 +64,6 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-
-            {/* <div class="container">
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <img src="https://cdn.iconscout.com/icon/free/png-512/diary-1574994-1331332.png"></img>
-                            <h3>Diary</h3>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.
-                            </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <img src="https://icon2.cleanpng.com/20180409/skw/kisspng-robotics-technology-computer-icons-internet-bot-robotics-5acb92ea218e54.0380469115232908581375.jpg"></img>
-                            <h3>DocBot!</h3>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.
-                            </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true"></img>
-                            <h3>Launch</h3>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.
-                            </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </div>
     )
 }
