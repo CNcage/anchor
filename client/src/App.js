@@ -54,11 +54,13 @@ class App extends Component {
                                 component={Dashboard}
                             />
                             <PrivateRoute
-                                exactpath="/livediary"
+                                exact
+                                path="/livediary"
                                 component={LiveDiary}
                             ></PrivateRoute>
                             <PrivateRoute
-                                exactpath="/diary"
+                                exact
+                                path="/diary"
                                 component={Diary}
                             ></PrivateRoute>
                         </Switch>

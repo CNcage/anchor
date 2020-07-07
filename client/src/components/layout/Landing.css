@@ -1,66 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 
-.landingnav {
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    z-index: 1;
-    transition-duration: 0.4s;
-}
-
 .hero-text img {
     max-width: 130px;
 }
-/* Style the text inside the navigation bar */
-.landingnav a {
-    float: left;
-    color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    margin: 0;
-    transition-duration: 0.4s;
-}
+
 h1 {
     font-size: 50px;
-}
-.landingnav a:hover {
-    background-color: rgb(67, 127, 175);
-    color: #000;
-}
-
-.navLinks {
-    margin: auto;
-    display: inline-flex;
-    justify-content: space-evenly;
-}
-.landingnavLogo {
-    display: flex;
-
-    margin: 0 20px;
-}
-.landingnavLogo p {
-    margin: auto;
-    font-size: larger;
-    color: rgb(0, 0, 0);
-    font-weight: 100;
-    padding: 0 20px;
-}
-.navLogout {
-    display: flex;
-}
-.navLogout button {
-    margin: 0 20px;
-}
-.navLogout p {
-    color: rgb(0, 0, 0);
 }
 
 .hero-image {
@@ -71,7 +16,7 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     transition: 100ms ease-in-out;
     margin-bottom: 0px;
 }
@@ -106,14 +51,6 @@ h1 {
     display: flex;
     justify-content: space-around;
 }
-#loginbtn {
-    color: #ffffff;
-    background-color: transparent;
-    border-radius: 5px;
-    opacity: 1;
-    display: flex;
-    justify-content: space-between;
-}
 
 .divider {
     width: 100%;
@@ -139,4 +76,12 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 200px;
+}
+html {
+    overflow-y: scroll;
+}
+span {
+    background-color: #f7dddc;
+    border-radius: 5px;
+    color: #712b29;
 }

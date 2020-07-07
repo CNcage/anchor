@@ -1,5 +1,6 @@
 .topnav {
-    background-color: rgb(40, 175, 118);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("https://images.pexels.com/photos/4084979/pexels-photo-4084979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -7,6 +8,7 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    height: 200px;
 }
 
 /* Style the text inside the navigation bar */
@@ -48,14 +50,18 @@
     display: flex;
 }
 .navLogout button {
-    background-color: rgb(40, 175, 118);
+    background-color: transparent;
     color: rgb(255, 255, 255);
     opacity: 1;
+    border: hidden;
+    padding: 0px 20px;
+    margin: 0px 10px;
 }
 .navLogout button:hover {
     background-color: white;
     color: black;
     opacity: 1;
+    cursor: pointer;
 }
 .navLogout p {
     color: white;

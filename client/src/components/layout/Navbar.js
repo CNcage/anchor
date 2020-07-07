@@ -5,7 +5,6 @@ import { logoutUser } from "../../actions/authActions"
 import Logo from "../../img/icons/anchorFinal.png"
 import "./Navbar.css"
 import { Link } from "react-router-dom"
-import authReducers from "../../reducers/authReducers"
 
 class Navbar extends Component {
     onLogoutClick = (e) => {
@@ -44,13 +43,6 @@ class Navbar extends Component {
                         <button className="button" onClick={this.onLogoutClick}>
                             Logout
                         </button>
-                        <a
-                            href="javascript:void(0);"
-                            class="icon"
-                            onclick="myFunction()"
-                        >
-                            <i class="fa fa-bars"></i>
-                        </a>
                     </div>
                 </div>
             </div>
