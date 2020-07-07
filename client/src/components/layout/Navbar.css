@@ -1,0 +1,62 @@
+.topnav {
+    background-color: rgb(40, 175, 118);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+/* Style the text inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    transition-duration: 0.4s;
+}
+.topnav a:hover {
+    background-color: white;
+    color: black;
+    opacity: 1;
+}
+
+.navLinks {
+    margin: auto;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+.navLogo {
+    display: flex;
+
+    margin: 0 20px;
+}
+.navLogo p {
+    margin: auto;
+    font-size: larger;
+    color: white;
+    font-weight: 100;
+    padding: 0 20px;
+}
+.navLogout {
+    display: flex;
+}
+.navLogout button {
+    background-color: rgb(40, 175, 118);
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+.navLogout button:hover {
+    background-color: white;
+    color: black;
+    opacity: 1;
+}
+.navLogout p {
+    color: white;
+}

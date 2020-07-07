@@ -15,6 +15,7 @@ import Login from "./components/auth/Login"
 import PrivateRoute from "./components/private-route/PrivateRoute"
 import Dashboard from "./components/dashboard/Dashboard"
 import LiveDiary from "./components/livediary/LiveDiary"
+import Diary from "./components/diary/Diary"
 import "animate.css/animate.css"
 
 // Check for token to keep user logged in
@@ -46,13 +47,20 @@ class App extends Component {
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/livediary" component={LiveDiary} />
                         <Switch>
                             <PrivateRoute
                                 exact
                                 path="/dashboard"
                                 component={Dashboard}
                             />
+                            <PrivateRoute
+                                exactpath="/livediary"
+                                component={LiveDiary}
+                            ></PrivateRoute>
+                            <PrivateRoute
+                                exactpath="/diary"
+                                component={Diary}
+                            ></PrivateRoute>
                         </Switch>
                     </div>
                 </Router>

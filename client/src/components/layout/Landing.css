@@ -29,7 +29,7 @@
     transition-duration: 0.4s;
 }
 h1 {
-    font-size: 75px;
+    font-size: 50px;
 }
 .landingnav a:hover {
     background-color: rgb(67, 127, 175);
@@ -66,13 +66,7 @@ h1 {
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("https://images.pexels.com/photos/38870/pexels-photo-38870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-    /* background: rgb(67, 127, 175);
-    background: linear-gradient(
-        90deg,
-        rgba(67, 127, 175, 1) 0%,
-        rgba(199, 188, 204, 1) 100%
-    ); */
-    height: 100%;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -111,7 +105,14 @@ h1 {
 .hero-button {
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+}
+#loginbtn {
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 5px;
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
 }
 
 .divider {
@@ -138,126 +139,4 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 200px;
-}
-.container {
-    width: 100%;
-    background-color: white;
-    position: relative;
-    margin-bottom: 200px;
-    /* clip-path: polygon(0 20%, 100% 1%, 100% 80%, 0% 100%); */
-    display: flex;
-    margin-top: 200px;
-    justify-content: space-around;
-}
-
-.container .card {
-    position: relative;
-    cursor: pointer;
-}
-
-.container .card .face {
-    width: 300px;
-    height: 200px;
-    transition: 0.5s;
-}
-
-.container .card .face.face1 {
-    position: relative;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-    align-items: center;
-    z-index: 1;
-    transform: translateY(100px);
-}
-
-.container .card:hover .face.face1 {
-    background: #c7bccc;
-    transform: translateY(0);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.container .card .face.face1 .content {
-    opacity: 0.8;
-    transition: 0.5s;
-}
-
-.container .card:hover .face.face1 .content {
-    opacity: 1;
-}
-
-.container .card .face.face1 .content img {
-    max-width: 100px;
-}
-
-.container .card .face.face1 .content h3 {
-    margin: 10px 0 0;
-    padding: 0;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 1.5em;
-}
-
-.container .card .face.face2 {
-    position: relative;
-    background: rgb(255, 255, 255);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    transform: translateY(-100px);
-}
-
-.container .card:hover .face.face2 {
-    transform: translateY(0);
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-}
-
-.container .card .face.face2 .content p {
-    margin: 0;
-    padding: 0;
-}
-
-.container .card .face.face2 .content a {
-    margin: 15px 0 0;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 900;
-    color: #333;
-    padding: 5px;
-    border: 1px solid #333;
-}
-
-.container .card .face.face2 .content a:hover {
-    background: #333;
-    color: rgb(0, 0, 0);
-}
-
-.loginbtn {
-    color: #42a076;
-    background-color: transparent;
-    border-radius: 5px;
-    opacity: 1;
-    display: flex;
-    justify-content: space-between;
-}
-.loginbtn:hover {
-    background-color: #42a076;
-    color: white;
-}
-.signupbtn {
-    background-color: #42a076;
-    color: rgb(255, 255, 255);
-    width: 100px;
-    border-radius: 5px;
-    opacity: 1;
-}
-.signupbtn:hover {
-    opacity: 0.5;
 }

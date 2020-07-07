@@ -1,445 +1,482 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import ChatBot from 'react-simple-chatbot';
-import pic1 from '../../img/1.png';
-import DocBotPic from '../../img/bot/docBot3.png'
+import React from "react"
+import { ThemeProvider } from "styled-components"
+import ChatBot from "react-simple-chatbot"
+import pic1 from "../../img/1.png"
+import DocBotPic from "../../img/bot/docBot3.png"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
 
 let docBot = DocBotPic
 
-
-
 const theme = {
-    background: ' ',
-    fontFamily: 'Helvetica Neue',
-    headerBgColor: 'linear-gradient(90deg, rgba(199,188,204,1) 20%, rgba(67,127,175,1) 100%);',
-    headerFontColor: '#fff',
-    headerFontSize: '15px',
-    botBubbleColor: '#c7bccc',
-    botFontColor: '#000',
-    userBubbleColor: '#437faf',
-    userFontColor: '#fff',
+    background: " ",
+    fontFamily: "Helvetica",
+    headerBgColor:
+        "linear-gradient(90deg, rgba(199,188,204,1) 20%, rgba(67,127,175,1) 100%);",
+    headerFontColor: "#fff",
+    headerFontSize: "15px",
+    botBubbleColor: "#c7bccc",
+    botFontColor: "#000",
+    userBubbleColor: "#437faf",
+    userFontColor: "#fff",
 }
 
-const BubbleStyle = {
-}
+const BubbleStyle = {}
 
 const IconStyle = {
-    borderRadius: '25px',
-    width: '35px',
+    borderRadius: "25px",
+    width: "35px",
 }
 
 function DocBot(props) {
     const { user } = props.auth
     const steps = [
         {
-            id: 'goodmorning',
+            id: "goodmorning",
             message: `Good morning ${user.name}, how are you feeling?`,
-            trigger: 'Morning_feeling',
+            trigger: "Morning_feeling",
         },
         {
-            id: 'Morning_feeling',
+            id: "Morning_feeling",
             options: [
                 {
-                    value: 1, label: 'Awesome!',
+                    value: 1,
+                    label: "Awesome!",
                     trigger: () => {
                         props.set_feeling(`I felt great`)
-                        return 'Temp'
-                    }
+                        return "Temp"
+                    },
                 },
                 {
-                    value: 2, label: 'Could be better...',
+                    value: 2,
+                    label: "Could be better...",
                     trigger: () => {
                         props.set_feeling(`I felt ok`)
-                        return 'Temp'
-                    }
+                        return "Temp"
+                    },
                 },
                 {
-                    value: 3, label: 'Awful!',
+                    value: 3,
+                    label: "Awful!",
                     trigger: () => {
                         props.set_feeling(`I felt awful`)
-                        return 'Temp'
-                    }
+                        return "Temp"
+                    },
                 },
                 {
-                    value: 4, label: 'I Need Help!',
+                    value: 4,
+                    label: "I Need Help!",
                     trigger: () => {
                         props.set_feeling(`I Needed Help`)
-                        return 'Urgent'
-                    }
+                        return "Urgent"
+                    },
                 },
             ],
         },
         {
-            id: 'Temp',
+            id: "Temp",
             message: `Is your temperature above 37.8°C?`,
-            trigger: 'tempOption',
+            trigger: "tempOption",
         },
         {
-            id: 'tempOption',
+            id: "tempOption",
             options: [
                 {
-                    value: 1, label: 'Yes',
+                    value: 1,
+                    label: "Yes",
                     trigger: () => {
                         props.set_temp(`My temp was over 37.8°C`)
-                        return 'highTemp'
-                    }
+                        return "highTemp"
+                    },
                 },
                 {
-                    value: 2, label: 'No',
+                    value: 2,
+                    label: "No",
                     trigger: () => {
                         props.set_temp(`My temp was under 37.8°C`)
-                        return 'lowerTemp'
-                    }
+                        return "lowerTemp"
+                    },
                 },
             ],
         },
         {
-            id: 'lowerTemp',
+            id: "lowerTemp",
             message: `Great! Your temperature is within the 'normal' range, Would you like more information?`,
-            trigger: 'summeryOption',
+            trigger: "summeryOption",
         },
         {
-            id: 'summeryOption',
+            id: "summeryOption",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'summery'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "summery",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'end1'
+                    value: 2,
+                    label: "No",
+                    trigger: "end1",
                 },
             ],
         },
         //////////////////////////////////////////////////////////high temp!
         {
-            id: 'highTemp',
+            id: "highTemp",
             message: `Hmm, that seems a little high...`,
-            trigger: 'highTemp2',
+            trigger: "highTemp2",
         },
         {
-            id: 'highTemp2',
+            id: "highTemp2",
             message: `Are you experiencing any of these symptoms? (click each symptom for more info)`,
-            trigger: 'symptoms',
+            trigger: "symptoms",
         },
         //////////////////////////////////////////////////////////loss of Taste or Smell
         {
-            id: 'tasteness',
+            id: "tasteness",
             message: `A change to your sense of smell or taste means that you've noticed you cannot smell or taste anything, or things smell or taste different to normal`,
-            trigger: 'log_taste',
+            trigger: "log_taste",
         },
         {
-            id: 'log_taste',
+            id: "log_taste",
             message: `Would you like to log your loss of smell and/or taste?`,
-            trigger: 'log_taste0',
+            trigger: "log_taste0",
         },
         {
-            id: 'log_taste0',
+            id: "log_taste0",
             options: [
                 {
-                    value: 1, label: 'Yes',
+                    value: 1,
+                    label: "Yes",
                     trigger: () => {
-                        props.set_tasteSmell(`My sense of smell / taste was affected`)
-                        return 'check1'
-                    }
+                        props.set_tasteSmell(
+                            `My sense of smell / taste was affected`
+                        )
+                        return "check1"
+                    },
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'moreSymptoms'
+                    value: 2,
+                    label: "No",
+                    trigger: "moreSymptoms",
                 },
             ],
         },
         //////////////////////////////////////////////////////////loss of Taste or Smell
         {
-            id: 'cough',
+            id: "cough",
             message: `A new, continuous cough means that you are coughing a lot for more than an hour, or 3 or more coughing episodes in 24 hours.
       If you usually have a cough, it may be worse than usual.`,
-            trigger: 'log_cough',
+            trigger: "log_cough",
         },
         {
-            id: 'log_cough',
+            id: "log_cough",
             message: `Would you like to log a continuous cough?`,
-            trigger: 'log_cough0',
+            trigger: "log_cough0",
         },
         {
-            id: 'log_cough0',
+            id: "log_cough0",
             options: [
                 {
-                    value: 1, label: 'Yes',
+                    value: 1,
+                    label: "Yes",
                     trigger: () => {
                         props.set_cough(`I had a continuous cough`)
-                        return 'check1'
-                    }
+                        return "check1"
+                    },
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'moreSymptoms'
+                    value: 2,
+                    label: "No",
+                    trigger: "moreSymptoms",
                 },
             ],
         },
         //////////////////////////////////////////////////////////symptoms
         {
-            id: 'symptoms',
+            id: "symptoms",
             options: [
                 {
-                    value: 1, label: 'Breathlessness',
-                    trigger: 'breathless'
+                    value: 1,
+                    label: "Breathlessness",
+                    trigger: "breathless",
                 },
                 {
-                    value: 2, label: 'Change in Taste / Smell',
-                    trigger: 'tasteness'
+                    value: 2,
+                    label: "Change in Taste / Smell",
+                    trigger: "tasteness",
                 },
                 {
-                    value: 3, label: 'Continuous Cough',
-                    trigger: 'cough'
+                    value: 3,
+                    label: "Continuous Cough",
+                    trigger: "cough",
                 },
                 {
-                    value: 4, label: 'None of these',
-                    trigger: 'none'
+                    value: 4,
+                    label: "None of these",
+                    trigger: "none",
                 },
             ],
         },
         {
-            id: 'none',
+            id: "none",
             message: `Ok that's good, just remember...`,
-            trigger: 'summery',
+            trigger: "summery",
         },
         ////////////////////////////////////////////////////////////breathless!
         {
-            id: 'breathless',
+            id: "breathless",
             message: `Breathlessness means that you find it difficult to do simple tasks, as if you are struggling to take in oxygen.`,
-            trigger: 'breathless2',
+            trigger: "breathless2",
         },
         {
-            id: 'breathless2',
+            id: "breathless2",
             message: `Do you have a pulse oximeter?`,
-            trigger: 'breathlessChoice',
+            trigger: "breathlessChoice",
         },
         {
-            id: 'breathlessChoice',
+            id: "breathlessChoice",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'oxygenLevel'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "oxygenLevel",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'cantSpeak'
+                    value: 2,
+                    label: "No",
+                    trigger: "cantSpeak",
                 },
             ],
         },
         {
-            id: 'moreSymptoms',
+            id: "moreSymptoms",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'symptoms'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "symptoms",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'end1'
+                    value: 2,
+                    label: "No",
+                    trigger: "end1",
                 },
             ],
         },
         ////////////////////////////////////////////////////////////Oxygen!
         {
-            id: 'oxygenLevel',
+            id: "oxygenLevel",
             message: `Oxygen level over 95%`,
-            trigger: 'oxyChoice',
+            trigger: "oxyChoice",
         },
         {
-            id: 'oxyChoice',
+            id: "oxyChoice",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'cantSpeak'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "cantSpeak",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'submitNotification'
+                    value: 2,
+                    label: "No",
+                    trigger: "submitNotification",
                 },
             ],
         },
         ////////////////////////////////////////////////////////////can't speak?
         {
-            id: 'cantSpeak',
+            id: "cantSpeak",
             message: `URGENT! If you cannot speak a full sentence or if your lips are turning blue reply Yes`,
-            trigger: 'speakChoice',
+            trigger: "speakChoice",
         },
         {
-            id: 'speakChoice',
+            id: "speakChoice",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'submitNotification'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "submitNotification",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'log_oxyQ'
+                    value: 2,
+                    label: "No",
+                    trigger: "log_oxyQ",
                 },
             ],
         },
         ////////////////////////////////////////////////////////////log oxygen?!
         {
-            id: 'log_oxyQ',
+            id: "log_oxyQ",
             message: `Great, would you still like to log you had shorness of breath`,
-            trigger: 'log_oxyO',
+            trigger: "log_oxyO",
         },
         {
-            id: 'log_oxyO',
+            id: "log_oxyO",
             options: [
                 {
-                    value: 1, label: 'Yes',
+                    value: 1,
+                    label: "Yes",
                     trigger: () => {
                         props.set_breathless(`I felt breathless`)
-                        return 'check1'
-                    }
+                        return "check1"
+                    },
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'log_oxyQ'
+                    value: 2,
+                    label: "No",
+                    trigger: "log_oxyQ",
                 },
             ],
         },
         {
-            id: 'check1',
+            id: "check1",
             message: `That's logged. Do you have any more symptoms?`,
-            trigger: 'moreSymptoms',
+            trigger: "moreSymptoms",
         },
         ////////////////////////////////////////////////////////////emergancy notification!
         {
-            id: 'submitNotification',
+            id: "submitNotification",
             message: `Stay calm. Your emergancy contact has been notified. Help is on the way`,
             end: true,
         },
         /////////////////////////////////////////////////////////////help!
         {
-            id: 'Urgent',
+            id: "Urgent",
             message: `Are you struggling to breathe`,
-            trigger: 'UrgentQ1',
+            trigger: "UrgentQ1",
         },
         {
-            id: 'UrgentQ1',
+            id: "UrgentQ1",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'Urgent1_yes'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "Urgent1_yes",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'contactEmergency'
+                    value: 2,
+                    label: "No",
+                    trigger: "contactEmergency",
                 },
             ],
         },
         {
-            id: 'Urgent1_yes',
+            id: "Urgent1_yes",
             message: `Can you speak a full sentence`,
-            trigger: 'UrgentQ2',
+            trigger: "UrgentQ2",
         },
         {
-            id: 'UrgentQ2',
+            id: "UrgentQ2",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'Urgent2_yes'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "Urgent2_yes",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'contactEmergency999'
+                    value: 2,
+                    label: "No",
+                    trigger: "contactEmergency999",
                 },
             ],
         },
         {
-            id: 'Urgent2_yes',
+            id: "Urgent2_yes",
             message: `Are your lips blue`,
-            trigger: 'UrgentQ3',
+            trigger: "UrgentQ3",
         },
         {
-            id: 'UrgentQ3',
+            id: "UrgentQ3",
             options: [
                 {
-                    value: 1, label: 'Yes',
-                    trigger: 'contactEmergency'
+                    value: 1,
+                    label: "Yes",
+                    trigger: "contactEmergency",
                 },
                 {
-                    value: 2, label: 'No',
-                    trigger: 'contactEmergency999'
+                    value: 2,
+                    label: "No",
+                    trigger: "contactEmergency999",
                 },
             ],
         },
         {
-            id: 'contactEmergency',
+            id: "contactEmergency",
             message: `Submitting Notification LOCAL`,
-            trigger: 'contactEmergency2'
+            trigger: "contactEmergency2",
         },
         {
-            id: 'contactEmergency2',
+            id: "contactEmergency2",
             message: `Stay calm. Your emergency contact has been notified. Help is on the way`,
             end: true,
         },
         {
-            id: 'contactEmergency999',
+            id: "contactEmergency999",
             message: `Submitting Notification 999`,
-            trigger: 'contactEmergency9992'
+            trigger: "contactEmergency9992",
         },
         {
-            id: 'contactEmergency9992',
+            id: "contactEmergency9992",
             message: `Stay calm. Your emergency contact has been notified. Help is on the way`,
             end: true,
         },
         ////////////////////////////////////////////////////////////summery!
         {
-            id: 'summery',
+            id: "summery",
             message: `If you have or have had any COVID-19 symptoms, please ensure that you follow government advice and self isolate for at least 7 days...`,
-            trigger: 'summery1',
+            trigger: "summery1",
         },
         {
-            id: 'summery1',
+            id: "summery1",
             message: `This means you must not leave your home. take public transport or make contact with anyone outside your household`,
-            trigger: 'summery2',
+            trigger: "summery2",
         },
         {
-            id: 'summery2',
+            id: "summery2",
             message: `Anyone living with you must also self-isolate for at least 14 days.`,
-            trigger: 'summery3',
+            trigger: "summery3",
         },
         {
-            id: 'summery3',
+            id: "summery3",
             message: `for further help..`,
-            trigger: 'siteLink1',
+            trigger: "siteLink1",
         },
         {
-            id: 'siteLink1',
+            id: "siteLink1",
             component: (
-                <div> <a href="https://111.nhs.uk/covid-19/">NHS 111 online coronovirus Service</a></div>
+                <div>
+                    {" "}
+                    <a href="https://111.nhs.uk/covid-19/">
+                        NHS 111 online coronovirus Service
+                    </a>
+                </div>
             ),
-            trigger: 'end1',
+            trigger: "end1",
         },
         {
-            id: 'end1',
+            id: "end1",
             message: `don't forget to click log this session`,
             trigger: () => {
                 props.submitLog()
             },
-
         },
         {
-            id: 'end2',
+            id: "end2",
             options: [
                 {
-                    value: 1, label: 'Log Now',
+                    value: 1,
+                    label: "Log Now",
                     trigger: () => {
                         props.submitLog()
-                        return 'end3'
-                    }
-                }
-            ]
+                        return "end3"
+                    },
+                },
+            ],
         },
         {
-            id: 'end3',
+            id: "end3",
             message: `Thanks, this diary entry has been saved! Come back any time'`,
             trigger: () => {
                 props.submitLog()
@@ -448,20 +485,21 @@ function DocBot(props) {
         },
     ]
 
-    return <ThemeProvider theme={theme}>
-        < ChatBot
-            steps={steps}
-            userAvatar={pic1}
-            botAvatar={docBot}
-            bubbleStyle={BubbleStyle}
-            avatarStyle={IconStyle}
-            headerTitle="Doc Bot"
-            placeholder="Reply..."
-            floating={false}
-            enableSmoothScroll={true}
-        />
-    </ThemeProvider >
-
+    return (
+        <ThemeProvider theme={theme}>
+            <ChatBot
+                steps={steps}
+                userAvatar={pic1}
+                botAvatar={docBot}
+                bubbleStyle={BubbleStyle}
+                avatarStyle={IconStyle}
+                headerTitle="Doc Bot"
+                placeholder="Reply..."
+                floating={false}
+                enableSmoothScroll={true}
+            />
+        </ThemeProvider>
+    )
 }
 
 DocBot.propTypes = {
