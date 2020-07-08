@@ -51,17 +51,17 @@ class Login extends Component {
         return (
             <div>
                 <div>
-                    <div className="hero-imagelogin">
+                    <div className="hero-image2">
                         <div class="animate__animated animate__fadeIn animate__delay-100ms">
-                            <div className="hero-text">
+                            <div className="hero-text2">
                                 <img src={Logo} alt="mainlogo"></img>
                                 <div className="loginwrapper">
                                     <h2>Login</h2>
-                                    <span>
-                                        {" "}
-                                        {errors.email} {errors.emailnotfound}{" "}
-                                    </span>
                                     <form noValidate onSubmit={this.onSubmit}>
+                                        <span>
+                                            {errors.email}{" "}
+                                            {errors.emailnotfound}
+                                        </span>
                                         <div>
                                             <input
                                                 onChange={this.onChange}
@@ -127,13 +127,14 @@ class Login extends Component {
                                             </div>
                                             <p>
                                                 Don't have an account?{" "}
-                                                <Link to="/register">
-                                                    <div>
+                                                <div>
+                                                    <Link to="/register">
+                                                        {" "}
                                                         <button>
                                                             Register Here
                                                         </button>
-                                                    </div>
-                                                </Link>
+                                                    </Link>
+                                                </div>
                                             </p>
                                         </div>
                                     </form>
