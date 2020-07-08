@@ -40,6 +40,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-card-flip": "^1.0.10",
+    "react-icons": "^3.10.0",
     "react-indiana-drag-scroll": "^1.6.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1",
