@@ -5,9 +5,12 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
+    position: relative;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
     height: 200px;
 }
 
@@ -23,6 +26,7 @@
     margin: 0;
     transition-duration: 0.4s;
 }
+
 .topnav a:hover {
     background-color: white;
     color: black;
@@ -34,11 +38,13 @@
     display: inline-flex;
     justify-content: space-evenly;
 }
+
 .navLogo {
     display: flex;
 
     margin: 0 20px;
 }
+
 .navLogo p {
     margin: auto;
     font-size: larger;
@@ -46,9 +52,11 @@
     font-weight: 100;
     padding: 0 20px;
 }
+
 .navLogout {
     display: flex;
 }
+
 .navLogout button {
     background-color: transparent;
     color: rgb(255, 255, 255);
@@ -57,12 +65,14 @@
     padding: 0px 20px;
     margin: 0px 10px;
 }
+
 .navLogout button:hover {
     background-color: white;
     color: black;
     opacity: 1;
     cursor: pointer;
 }
+
 .navLogout p {
     color: white;
 }

@@ -5,18 +5,18 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
 
 // Post Diary entry to database
-export const logDiary = (newEntry, history) => 
+export const logDiary = (newEntry, history) =>
   dispatch => {
     axios
       .post("/api/users/submitdiary", newEntry)
-      .then(res => history.push("/dashboard")) // re-direct to login on successful register
+      .then(res => history.push("/livediary")) // re-direct to login on successful register
       .catch(err =>
         dispatch({
-            type: GET_ERRORS,
-            payload: err.response.data
+          type: GET_ERRORS,
+          payload: err.response.data
         })
-    );
-};
+      );
+  };
 
 
 
@@ -26,10 +26,10 @@ export const registerUser = (userData, history) => dispatch => {
     .post("/api/users/register", userData)
     .then(res => history.push("/login")) // re-direct to login on successful register
     .catch(err =>
-        dispatch({
-            type: GET_ERRORS,
-            payload: err.response.data
-        })
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
     );
 };
 
@@ -53,9 +53,9 @@ export const loginUser = userData => dispatch => {
       dispatch(setCurrentUser(decoded));
     })
     .catch(err =>
-        dispatch({
-            type: GET_ERRORS,
-            payload: err.response.data
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
       })
     );
 };
@@ -74,19 +74,19 @@ export const setCurrentUser = decoded => {
 
 // User loading
 export const setUserLoading = () => {
-    return {
-        type: USER_LOADING
-    };
+  return {
+    type: USER_LOADING
+  };
 };
 
 
 
 // Log user out
 export const logoutUser = () => dispatch => {
-    // Remove token from local storage
-    localStorage.removeItem("jwtToken");
-    // Remove auth header for future requests
-    setAuthToken(false);
-    // Set current user to empty object {} which will set isAuthenticated to false
-    dispatch(setCurrentUser({}));
+  // Remove token from local storage
+  localStorage.removeItem("jwtToken");
+  // Remove auth header for future requests
+  setAuthToken(false);
+  // Set current user to empty object {} which will set isAuthenticated to false
+  dispatch(setCurrentUser({}));
 };
