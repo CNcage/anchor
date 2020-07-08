@@ -1,38 +1,21 @@
-.recordwrapper {
+.cardContainer {
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
-#front {
-    height: 400px;
-    width: 300px;
-    border-radius: 5%;
-    /* unique */
-    background-color: rgb(67, 58, 250);
-    color: cornsilk;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-#front button {
-    width: 100%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 20px 0px;
-    border: hidden;
-    cursor: pointer;
+.cardContainer h2 {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 30px;
 }
 
-#back {
-    height: 400px;
-    width: 300px;
-    border-radius: 5%;
-    /* unique */
-    background-color: rgb(72, 72, 92);
-    color: cornsilk;
+.swipeContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+#aboutRecords {
+    text-align: center;
 }
