@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React from "react"
 import DocBot from "./DocBot"
 import Diary from "./Diary"
 import DiaryLog from "./DiaryLog"
@@ -7,8 +7,6 @@ import PropTypes from "prop-types"
 import "./LiveDiary.css"
 import { connect } from "react-redux"
 import { logoutUser, logDiary } from "../../actions/authActions"
-
-
 
 class LiveDiary extends React.Component {
     state = {
@@ -28,8 +26,8 @@ class LiveDiary extends React.Component {
 
     set_time() {
         const
-        takeTwelve = n => n > 12 ? n - 12 : n,
-        addZero = n => n < 10 ? "0" + n : n;
+            takeTwelve = n => n > 12 ? n - 12 : n,
+            addZero = n => n < 10 ? "0" + n : n;
         let d, h, m, amPm, time;
         d = new Date();
         h = addZero(takeTwelve(d.getHours()));
@@ -46,7 +44,7 @@ class LiveDiary extends React.Component {
             })
         }
     }
-    
+
     submitLog = () => {
         const newEntry = {
             _id: this.state.userID,
@@ -57,7 +55,7 @@ class LiveDiary extends React.Component {
             }
         };
 
-        this.props.logDiary(newEntry,this.props.history)
+        this.props.logDiary(newEntry, this.props.history)
     }
 
 

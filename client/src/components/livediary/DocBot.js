@@ -494,9 +494,11 @@ function DocBot(props) {
                 bubbleStyle={BubbleStyle}
                 avatarStyle={IconStyle}
                 headerTitle="Doc Bot"
-                placeholder="Reply..."
                 floating={false}
                 enableSmoothScroll={true}
+                //if no user typing required
+                hideSubmitButton={true}
+                placeholder=""
             />
         </ThemeProvider>
     )
