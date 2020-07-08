@@ -1,0 +1,32 @@
+.recordsContainer {
+    display: flex;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#cardFront {
+    height: 400px;
+    width: 300px;
+    border-radius: 5%;
+    /* unique */
+    background-color: crimson;
+    color: cornsilk;
+}
+
+#cardBack {
+    height: 400px;
+    width: 300px;
+    border-radius: 5%;
+    /* unique */
+    background-color: darkblue;
+    color: cornsilk;
+}
+
+#emote {
+    height: 25px;
+    width: 25px
+}
