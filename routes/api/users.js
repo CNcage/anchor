@@ -8,6 +8,7 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 const User = require("../../models/User");
+const Diary = require("../../models/Diary");
 
 
 router.post("/register", (req, res) => {
@@ -39,13 +40,6 @@ router.post("/register", (req, res) => {
 });
 
 
-// POST - LOGIN a user and return JWT token - 
-// 1. Const.. Pull the errors and isValid variables from our validateLoginInput(req.body) function and check input validation
-// 2. if.. Checks validation
-// 3. user.findOne.. Find user by email then checks if they exist in db
-// 4. bcrypt.compare.. If user exists, use bcryptjs to compare submitted password with hashed password in our database 
-// 5. if.. passwords match, create jwt payload and sign jwt
-
 router.post("/login", (req, res) => {
 const { errors, isValid } = validateLoginInput(req.body);
     if (!isValid) {
@@ -65,12 +59,40 @@ const { errors, isValid } = validateLoginInput(req.body);
                 res.json({success: true, token: "Bearer " + token});
             });
         } else {
-            return res
-            .status(400)
-            .json({ passwordincorrect: "Password incorrect" });
+            return res.status(400).json({ passwordincorrect: "Password incorrect" });
         }
         });
     });
 });
+
+router.post("/submitdiary", (req, res) => {
+
+    const _id = req.body._id;
+    const diary = new Diary({
+        date: req.body.newDiary.date,
+        time: req.body.newDiary.time,
+        diary: req.body.newDiary.diary
+    });
+    User.findById({ _id }).then(user => {
+        if (!user) {
+            return res.status(404).json({ userNotExist: "Incorrect User" });
+        } else {
+            diary.save(err=>{
+                if(err)
+                    res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
+                else{
+                    user.diaries.push(diary);
+                    user.save(err=>{
+                        if(err)
+                            res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
+                        else
+                            res.status(200).json({message : {msgBody : "Successfully created diary", msgError : false}});
+                    });
+                }
+            })
+        }
+    })
+});
+
 
 module.exports = router;

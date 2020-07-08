@@ -3,6 +3,23 @@ import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
+
+// Post Diary entry to database
+export const logDiary = (newEntry, history) => 
+  dispatch => {
+    axios
+      .post("/api/users/submitdiary", newEntry)
+      .then(res => history.push("/dashboard")) // re-direct to login on successful register
+      .catch(err =>
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+        })
+    );
+};
+
+
+
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   axios
