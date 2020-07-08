@@ -50,9 +50,9 @@ class Register extends Component {
     render() {
         const { errors } = this.state
         return (
-            <div className="hero-imagesignup">
+            <div className="hero-image3">
                 <div className="animate__animated animate__fadeIn animate__delay-100ms">
-                    <div className="hero-text">
+                    <div className="hero-text3">
                         <img src={Logo} alt="mainlogo"></img>
                         <div className="signupwrapper">
                             <div id="signUp">
@@ -133,11 +133,11 @@ class Register extends Component {
                                             </div>
                                             <p>
                                                 Already have an account?{" "}
-                                                <Link to="/login">
-                                                    <div>
+                                                <div>
+                                                    <Link to="/login">
                                                         <button>Log in</button>
-                                                    </div>
-                                                </Link>
+                                                    </Link>
+                                                </div>
                                             </p>
                                         </div>
                                     </form>
