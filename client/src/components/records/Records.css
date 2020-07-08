@@ -1,0 +1,17 @@
+#front {
+    height: 400px;
+    width: 300px;
+    border-radius: 5%;
+    /* unique */
+    background-color: crimson;
+    color: cornsilk;
+}
+
+#back {
+    height: 400px;
+    width: 300px;
+    border-radius: 5%;
+    /* unique */
+    background-color: darkblue;
+    color: cornsilk;
+}

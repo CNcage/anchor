@@ -6,12 +6,9 @@
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    /* Set the navbar to fixed position */
     top: 0;
-    /* Position the navbar at the top of the page */
     width: 100%;
-    /* Full width */
-    height: 200px;
+    height: 75px;
 }
 
 /* Style the text inside the navigation bar */
