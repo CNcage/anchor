@@ -32,7 +32,7 @@ class Navbar extends Component {
                     <div className="navLinks">
                         <Link to="/Dashboard">Dashboard</Link>
                         <Link to="/livediary">ChatBot</Link>
-                        <Link to="Diary">Diary</Link>
+                        <Link to="/records">{user.name}'s' Records</Link>
                     </div>
 
                     <div className="navLogout">

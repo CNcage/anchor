@@ -36,11 +36,12 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "modules": "^0.4.0",
-    "mongoose": "^5.9.21",
+    "mongoose": "^5.9.22",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-card-flip": "^1.0.10",
     "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1",
     "validator": "^13.1.1"
   },
   "devDependencies": {
