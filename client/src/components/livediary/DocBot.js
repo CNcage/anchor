@@ -29,7 +29,7 @@ const IconStyle = {
     width: "35px",
 }
 
-function DocBot(props) {
+const DocBot = (props) => {
     const { user } = props.auth
     const steps = [
         {

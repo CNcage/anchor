@@ -58,8 +58,6 @@ class LiveDiary extends React.Component {
         this.props.logDiary(newEntry, this.props.history)
     }
 
-
-
     //functions to set the states
     set_feeling = (update) => {
         this.setState({
@@ -135,6 +133,7 @@ class LiveDiary extends React.Component {
                         date={this.state.date}
                         time={this.state.time}
                         diary={this.state.diary}
+                        diaryLogs={this.diaryLogs}
                     />
                 </div>
             </div>
