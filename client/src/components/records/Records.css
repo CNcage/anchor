@@ -1,10 +1,27 @@
+.recordwrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #front {
     height: 400px;
     width: 300px;
     border-radius: 5%;
     /* unique */
-    background-color: crimson;
+    background-color: rgb(67, 58, 250);
     color: cornsilk;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#front button {
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 20px 0px;
+    border: hidden;
+    cursor: pointer;
 }
 
 #back {
@@ -12,6 +29,10 @@
     width: 300px;
     border-radius: 5%;
     /* unique */
-    background-color: darkblue;
+    background-color: rgb(72, 72, 92);
     color: cornsilk;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
