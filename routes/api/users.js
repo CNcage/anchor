@@ -94,5 +94,26 @@ router.post("/submitdiary", (req, res) => {
     })
 });
 
+router.post("/records", (req, res) => {
+
+    const getDiaries = async (user) => {
+        const loaddiaries = []
+
+        for (const diary of user.diaries) {
+            // console.log(`step1: ${diary}`);
+            loaddiaries.push(await Diary.find({ _id : diary }))
+        }
+        return loaddiaries
+    }
+
+    User.findById( req.body._id ).then( async (user) => {
+        if (!user) {
+            return res.status(404).json({ response : {data:null} , message : {msgBody : "Error has occured", msgError: true}});
+        } else{
+           return res.status(200).json({ response : {data: null} , diaries: await getDiaries(user) , message : {msgBody : "Successfully pulled records", msgError : false} })
+        }
+    })
+});
+
 
 module.exports = router;

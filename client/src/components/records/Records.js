@@ -1,6 +1,8 @@
 // key imports
 import React, { Component } from 'react'
 import ScrollContainer from 'react-indiana-drag-scroll'
+import { logoutUser } from "../../actions/authActions"
+import { connect } from "react-redux"
 
 // css
 import './Records.css'
@@ -15,8 +17,11 @@ import { FaRegSmile } from 'react-icons/fa'
 import { FaRegMeh } from 'react-icons/fa'
 import { FaRegSadTear } from 'react-icons/fa'
 
+
 class Records extends Component {
   state = {
+    userID: this.props.auth.user.id,
+    diaries: [],
     records: [
      {
         date: "13/05/2020",
@@ -47,7 +52,27 @@ class Records extends Component {
     ]
   }
 
+  async componentDidMount() {
+    const response = await fetch('/api/users/records',{
+          method : "post",
+          body : JSON.stringify({_id: this.state.userID}),
+          headers:{
+              'Content-Type' : 'application/json'
+          }
+      }).then(res=>{
+          if(res.status !== 401){
+              return res.json().then(data => data);
+          }
+          else
+              return {message : {msgBody : "Error!"},msgError : true};
+      });
+      this.setState({
+        diaries: response
+      })
+  }
+
   render() {
+    console.log(this.state.diaries)
     let allRecords = this.state.records.map((record, index) => {
       return <Cards key={index} date={record.date} day={record.day} emote={record.emote} average={record.average} timeAM={record.timeAM} timePM={record.timePM} timeEV={record.timeEV} symptom1={record.symptom1} symptom2={record.symptom2} symptom3={record.symptom3} symptom4={record.symptom4} />
     })
@@ -70,4 +95,8 @@ class Records extends Component {
   }
 }
 
-export default Records;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+})
+
+export default connect(mapStateToProps, { logoutUser })(Records)
