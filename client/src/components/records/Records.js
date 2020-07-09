@@ -69,7 +69,8 @@ class Records extends Component {
     }
 
     render() {
-        let testing = this.state.diaries
+        const testing = this.state.diaries.diaries
+
         console.log(testing)
 
         // let allRecords = this.state.records.map((record, index) => {

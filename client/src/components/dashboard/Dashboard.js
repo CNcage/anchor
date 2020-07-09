@@ -11,6 +11,7 @@ import { FcMindMap } from "react-icons/fc"
 import { GiWorld } from "react-icons/gi"
 import { FcSupport } from "react-icons/fc"
 import { FcAssistant } from "react-icons/fc"
+import { FcTwoSmartphones } from "react-icons/fc"
 
 class Dashboard extends Component {
     state = {
@@ -102,10 +103,17 @@ class Dashboard extends Component {
                         </div>
                     </div>
                     <div className="main-dashboard">
-                        <h1>{user.name} Dashboard </h1>
                         <div className="mainCards">
                             <div className="maincard-dash">
-                                <h3>This week</h3>
+                                <div className="maincard1">
+                                    <h4>This week</h4>
+                                    <p>7 Logs</p>
+                                </div>
+
+                                <div className="maincard2">
+                                    <h4>All time</h4>
+                                    <p>72 Logs</p>
+                                </div>
                             </div>
                             <div className="smallercards">
                                 <div className="card-dash">
@@ -133,6 +141,11 @@ class Dashboard extends Component {
                                 <div className="card-dash">
                                     <FcSettings size={"150px"} />
                                     <h4>Settings</h4>
+                                </div>
+
+                                <div className="card-dash">
+                                    <FcTwoSmartphones size={"150px"} />
+                                    <h4>Next of Kin</h4>
                                 </div>
                             </div>
                         </div>
