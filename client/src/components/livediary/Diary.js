@@ -1,7 +1,7 @@
-import React from "react"
-import DiaryLog from "./DiaryLog"
-import "./Diary.css"
-import todIcon from "../../img/icons/icon_Morning.png"
+import React, { useReducer } from 'react';
+import DiaryLog from './DiaryLog';
+import './Diary.css';
+import todIcon from '../../img/icons/icon_Morning.png';
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
@@ -10,13 +10,11 @@ const Diary = (props) => {
     const { user } = props.auth
 
     let diaryLogs = props.diary.map((diary, index) => {
-        return (
-            <DiaryLog
-                key={index}
-                question={diary.question}
-                answer={diary.answer}
-            />
-        )
+        return <DiaryLog
+            key={index}
+            question={diary.question}
+            answer={diary.answer}
+        />
     })
 
     return (
@@ -26,15 +24,18 @@ const Diary = (props) => {
                 <div id="currentDate">{props.date}</div>
             </div>
             <div className="newHeader">
-                <div className="diaryTime">{props.time}</div>
-                <div>
-                    <img className="todIcon" src={todIcon} alt="morning"></img>
-                </div>
+                <div className="diaryTime">At {props.time}:</div>
+                <div><img className="todIcon" src={todIcon} alt="morning"></img></div>
             </div>
-            <div className="report">{diaryLogs}</div>
+            <hr className="diaryLine"></hr>
+            <div className="report">
+                {diaryLogs}
+            </div>
         </div>
     )
-}
+
+};
+
 
 Diary.propTypes = {
     logoutUser: PropTypes.func.isRequired,

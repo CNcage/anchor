@@ -5,6 +5,7 @@ import DocBotPic from "../../img/bot/docBot3.png"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
+import { Link } from "react-router-dom"
 
 // import pic1 from "../../img/1.png"
 
@@ -327,7 +328,7 @@ const DocBot = (props) => {
                 {
                     value: 2,
                     label: "No",
-                    trigger: "log_oxyQ",
+                    trigger: "symptoms",
                 },
             ],
         },
@@ -450,7 +451,7 @@ const DocBot = (props) => {
                 <div>
                     {" "}
                     <a href="https://111.nhs.uk/covid-19/">
-                        NHS 111 online coronovirus Service
+                        NHS 111 online coronavirus Service
                     </a>
                 </div>
             ),
@@ -458,9 +459,10 @@ const DocBot = (props) => {
         },
         {
             id: "end1",
-            message: `don't forget to click log this session`,
+            message: `Thank you, this session has been logged`,
             trigger: () => {
                 props.submitLog()
+                return "end2"
             },
         },
         {
@@ -468,11 +470,17 @@ const DocBot = (props) => {
             options: [
                 {
                     value: 1,
-                    label: "Log Now",
+                    label: "Go To Dashboard",
                     trigger: () => {
-                        props.submitLog()
-                        return "end3"
-                    },
+                        window.location.assign("/dashboard")
+                    }
+                },
+                {
+                    value: 2,
+                    label: "My Records",
+                    trigger: () => {
+                        window.location.assign("/records")
+                    }
                 },
             ],
         },
@@ -515,3 +523,5 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, { logoutUser })(DocBot)
+
+

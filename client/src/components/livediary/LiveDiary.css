@@ -6,6 +6,10 @@ html {
   overflow: hidden
 }
 
+hr.diaryLine {
+  border-top: 1px rgb(71, 123, 71);
+}
+
 .diarywrapper {
   padding-top: 20px;
   display: flex;
