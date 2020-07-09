@@ -14,7 +14,6 @@
     width: 280px;
     border-radius: 5%;
     text-align: center;
-    border: solid slategray;
     background-color: rgb(251, 251, 251);
 }
 
@@ -35,6 +34,7 @@
     width: 250px;
     height: 50px;
 }
+
 #date-front {
     display: inline-flex;
     align-self: center;
@@ -86,7 +86,6 @@ p {
     height: 430px;
     width: 280px;
     border-radius: 5%;
-    border: solid slategray;
     background-color: rgb(251, 251, 251);
 }
 
@@ -94,10 +93,10 @@ p {
     align-self: center;
     color: black;
     margin: 0%;
-    border-bottom: solid slategray 1px;
     width: 250px;
     height: 50px;
     text-align: center;
+    margin: 5px;
 }
 
 #cardBack h3 {
@@ -116,7 +115,7 @@ p {
     height: 30px;
     width: 250px;
     background-color:rgba(0, 0, 0, 0.1);
-    margin: 0px;
+    margin-bottom: 10px;
 }
 
 #times {
@@ -157,7 +156,6 @@ p {
     flex-direction: column;
     justify-content: left;
     align-items: left;
-    border: solid slategray;
     border-radius: 5%;
     height: 390px;
     width: 250px;
@@ -167,4 +165,13 @@ p {
     display: flex;
     flex-direction: column;
     font-size: 30px;
+}
+
+#tapBack {
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    padding-bottom: 25px;
 }

@@ -81,7 +81,7 @@ class Records extends Component {
         <Navbar />
         <div className="container">
             <h2 id="title">How are you doing?</h2>
-            <p id="subtitle">Here are the DocBot's reports...</p>
+            <p id="subtitle">Here are the DocBot's records...</p>
             <br></br>
             <ScrollContainer className="swipeContainer">
               <div id="recordsBox">{allRecords}</div>

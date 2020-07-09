@@ -12,12 +12,13 @@ import { GiWorld } from "react-icons/gi"
 
 class Dashboard extends Component {
     state = {
-        img: "",
+        img: "https://i.guim.co.uk/img/media/8d56e47b642365ea41f2d0a7cee23fbd1dce6906/239_14_1614_968/master/1614.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=3f7a898d8ce9f4679f36addff28dc4e0",
         headline: "Loading...",
         news: "Loading...",
         link: "link velho",
         author: "",
         number: "test",
+        published_date: "",
     }
 
     onLogoutClick = (e) => {
@@ -31,28 +32,37 @@ class Dashboard extends Component {
     }
 
     handleFetch = () => {
-        let newImg = ""
+        // let newImg = ""
         let newHeadline = ""
         let newNews = ""
         let newLink = "link novo"
         let newAuthor = ""
+        let newPublishedDate = ""
 
-        let newNumber = 1
-        fetch(
-            "http://newsapi.org/v2/everything?q=bitcoin&from=2020-06-09&sortBy=publishedAt&apiKey=dd3cd50950504064ac5b3bd0fda24657"
-        )
+        let newNumber = 19
+        fetch("https://covid-19-news.p.rapidapi.com/v1/covid?lang=en&media=True&q=covid", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "covid-19-news.p.rapidapi.com",
+                "x-rapidapi-key": "22986ed8c5msh23013206b9938a8p185998jsn12d228c74794"
+            }
+        })
+        // fetch(
+        //     "http://newsapi.org/v2/everything?q=bitcoin&from=2020-06-09&sortBy=publishedAt&apiKey=dd3cd50950504064ac5b3bd0fda24657"
+        // )
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data.articles[1].url)
                 newNumber = Math.floor(Math.random() * 10)
-                newHeadline = data.articles[1].title
-                newNews = data.articles[1].description
-                newLink = data.articles[1].url
-                newImg = data.articles[1].urlToImage
-                newAuthor = data.articles[1].source.name
+                newHeadline = data.articles[newNumber].title
+                newNews = data.articles[newNumber].summary
+                newLink = data.articles[newNumber].link
+                // newImg = data.articles[1].media
+                newAuthor = data.articles[newNumber].author
+                newPublishedDate = data.articles[newNumber].published_date
                 this.setState({ number: newNumber })
                 this.setState({ author: newAuthor })
-                this.setState({ img: newImg })
+                // this.setState({ img: newImg })
                 this.setState({ headline: newHeadline })
                 this.setState({ news: newNews })
                 this.setState({ link: newLink })
@@ -67,7 +77,7 @@ class Dashboard extends Component {
                 <div className="dashboardbody">
                     <div className="newsbar">
                         <GiWorld size="60px" color="white" />
-                        <h2>Latest News</h2>
+                        <h2>COVID-19 News</h2>
                         <div className="card-news">
                             <a
                                 href={this.state.link}
@@ -78,7 +88,7 @@ class Dashboard extends Component {
                                 <h3>{this.state.headline}</h3>
                             </a>
                             <p>{this.state.news}</p>
-                            <p>Source: {this.state.author}</p>
+                            <p>{this.state.published_date}</p>
                         </div>
                     </div>
                     <div className="main-dashboard">
