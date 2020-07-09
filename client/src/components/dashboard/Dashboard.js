@@ -11,6 +11,8 @@ class Dashboard extends Component {
         news: "Loading...",
         link: "link velho",
         img: "",
+        author: "",
+        number: "test",
     }
 
     onLogoutClick = (e) => {
@@ -27,16 +29,22 @@ class Dashboard extends Component {
         let newNews = ""
         let newLink = "link novo"
         let newImg = ""
+        let newAuthor = ""
+        let newNumber = 1
         fetch(
             "http://newsapi.org/v2/everything?q=bitcoin&from=2020-06-09&sortBy=publishedAt&apiKey=dd3cd50950504064ac5b3bd0fda24657"
         )
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.articles[2].url)
-                newHeadline = data.articles[2].title
-                newNews = data.articles[2].description
-                newLink = data.articles[2].url
-                newImg = data.articles[2].urlToImage
+                console.log(data.articles[1].url)
+                newNumber = Math.floor(Math.random() * 10)
+                newHeadline = data.articles[1].title
+                newNews = data.articles[1].description
+                newLink = data.articles[1].url
+                newImg = data.articles[1].urlToImage
+                newAuthor = data.articles[1].source.name
+                this.setState({ number: newNumber })
+                this.setState({ author: newAuthor })
                 this.setState({ img: newImg })
                 this.setState({ headline: newHeadline })
                 this.setState({ news: newNews })
@@ -48,24 +56,53 @@ class Dashboard extends Component {
         return (
             <div>
                 <Navbar />
-                <div>
-                    <h2>Latest News</h2>
-                </div>
+                <div className="dashboardbody">
+                    <div className="newsbar">
+                        <h2>Latest News</h2>
 
-                <div className="card-news">
-                    <a
-                        href={this.state.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img src={this.state.img} alt="newsImg"></img>
-                        <h2>{this.state.headline}</h2>
-                    </a>
-                    <p>{this.state.news}</p>
+                        <div className="card-news">
+                            <a
+                                href={this.state.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img src={this.state.img} alt="newsImg"></img>
+                                <h3>{this.state.headline}</h3>
+                            </a>
+                            <p>{this.state.news}</p>
+                            <p>{this.state.author}</p>
+                        </div>
+                        <div className="card-news">
+                            <a
+                                href={this.state.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img src={this.state.img} alt="newsImg"></img>
+                                <h3>{this.state.headline}</h3>
+                            </a>
+                            <p>{this.state.news}</p>
+                            <p>{this.state.author}</p>
+                        </div>
+                        <div className="card-news">
+                            <a
+                                href={this.state.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img src={this.state.img} alt="newsImg"></img>
+                                <h3>{this.state.headline}</h3>
+                            </a>
+                            <p>{this.state.news}</p>
+                            <b>
+                                <p>{this.state.author}</p>
+                            </b>
+                        </div>
+                    </div>
+                    <div className="main-dashboard">
+                        <h1>Users Dashboard {this.state.number}</h1>
+                    </div>
                 </div>
-
-                <div className="sidenav"></div>
-                <div className="footer"></div>
             </div>
         )
     }
