@@ -82,7 +82,7 @@ const handleClick = () => {
                                 </div>
                             </div>
                         </div>
-                            <div id="tap">
+                            <div id="tapBack">
                                 <p>tap to return to summary</p>
                             </div>
                     </div>
