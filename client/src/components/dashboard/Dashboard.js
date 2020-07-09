@@ -11,7 +11,7 @@ class Dashboard extends Component {
         this.props.logoutUser()
     }
 
-    render() {
+    render(props) {
         return (
             <div>
                 <Navbar />

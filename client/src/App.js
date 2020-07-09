@@ -16,7 +16,12 @@ import PrivateRoute from "./components/private-route/PrivateRoute"
 import Dashboard from "./components/dashboard/Dashboard"
 import LiveDiary from "./components/livediary/LiveDiary"
 import Records from "./components/records/Records"
+import "./App.css"
 import "animate.css/animate.css"
+
+import userPic from './img/1.png'
+
+window.$showUserPic = userPic;
 
 // Check for token to keep user logged in
 
@@ -51,18 +56,18 @@ class App extends Component {
                             <PrivateRoute
                                 exact
                                 path="/dashboard"
-                                component={Dashboard}
-                            />
+                                userPic={userPic}
+                                component={Dashboard} />
                             <PrivateRoute
                                 exact
                                 path="/livediary"
-                                component={LiveDiary}
-                            ></PrivateRoute>
+                                component={LiveDiary}>
+                            </PrivateRoute>
                             <PrivateRoute
                                 exact
                                 path="/records"
-                                component={Records}
-                            ></PrivateRoute>
+                                component={Records}>
+                            </PrivateRoute>
                         </Switch>
                     </div>
                 </Router>
@@ -70,4 +75,5 @@ class App extends Component {
         )
     }
 }
+
 export default App

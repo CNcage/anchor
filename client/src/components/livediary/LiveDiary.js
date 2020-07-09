@@ -117,24 +117,28 @@ class LiveDiary extends React.Component {
         console.log(this.state)
         return (
             <div>
-                <Navbar />
-                <div className="diarywrapper">
-                    <DocBot
-                        set_feeling={this.set_feeling}
-                        set_temp={this.set_temp}
-                        set_cough={this.set_cough}
-                        set_tasteSmell={this.set_tasteSmell}
-                        set_date={this.set_date}
-                        consoleLog={this.consoleLog}
-                        set_breathless={this.set_breathless}
-                        submitLog={this.submitLog}
-                    />
-                    <Diary
-                        date={this.state.date}
-                        time={this.state.time}
-                        diary={this.state.diary}
-                        diaryLogs={this.diaryLogs}
-                    />
+                <div className="ldBackground">
+                    <Navbar />
+                    <div className="diarywrapper">
+                        <div id="docBot"><DocBot
+                            set_feeling={this.set_feeling}
+                            set_temp={this.set_temp}
+                            set_cough={this.set_cough}
+                            set_tasteSmell={this.set_tasteSmell}
+                            set_date={this.set_date}
+                            consoleLog={this.consoleLog}
+                            set_breathless={this.set_breathless}
+                            submitLog={this.submitLog}
+                        /></div>
+                        <div id="lDiary">
+                            <Diary
+                                date={this.state.date}
+                                time={this.state.time}
+                                diary={this.state.diary}
+                                diaryLogs={this.diaryLogs}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         )

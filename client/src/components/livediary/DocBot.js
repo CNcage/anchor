@@ -1,16 +1,17 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
 import ChatBot from "react-simple-chatbot"
-import pic1 from "../../img/1.png"
 import DocBotPic from "../../img/bot/docBot3.png"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
 
+// import pic1 from "../../img/1.png"
+
 let docBot = DocBotPic
 
 const theme = {
-    background: " ",
+    background: "#fff",
     fontFamily: "Helvetica",
     headerBgColor:
         "linear-gradient(90deg, rgba(199,188,204,1) 20%, rgba(67,127,175,1) 100%);",
@@ -489,7 +490,7 @@ const DocBot = (props) => {
         <ThemeProvider theme={theme}>
             <ChatBot
                 steps={steps}
-                userAvatar={pic1}
+                userAvatar={window.$showUserPic}
                 botAvatar={docBot}
                 bubbleStyle={BubbleStyle}
                 avatarStyle={IconStyle}

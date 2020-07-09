@@ -6,6 +6,7 @@ import Logo from "../../img/icons/anchorFinal.png"
 import "./Navbar.css"
 import { Link } from "react-router-dom"
 
+
 class Navbar extends Component {
 
     onLogoutClick = (e) => {
@@ -22,7 +23,11 @@ class Navbar extends Component {
     }
 
     render() {
+
+        const userIcon = window.$showUserPic;
+
         const { user } = this.props.auth
+
         return (
             <div>
                 <div className="topnav" id="myTopnav">
@@ -33,13 +38,16 @@ class Navbar extends Component {
                     <div className="navLinks">
                         <Link to="/Dashboard">Dashboard</Link>
                         <Link to="/livediary">ChatBot</Link>
-                        <Link to="/records">{user.name}'s' Records</Link>
+                        <Link to="/records">My Records</Link>
                     </div>
 
                     <div className="navLogout">
                         <p>
-                            Welcome, <b>{user.name}</b>
+                            Welcome, <br></br><b>{user.name}</b>
                         </p>
+                        <div>
+                            <img className="icon" src={userIcon} alt="hello"></img>
+                        </div>
 
                         <button className="button" onClick={this.onLogoutClick}>
                             Logout
