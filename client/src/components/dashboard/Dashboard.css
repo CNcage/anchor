@@ -2,6 +2,16 @@
     height: 50px;
 }
 
+.dashboardbody {
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
 /* NAV BAR ENDS HERE */
 
 .footer {
@@ -10,4 +20,114 @@
     position: absolute;
     bottom: 0;
     background-color: rgb(102, 102, 102);
+}
+.newsbar {
+    padding: 50px 0px;
+    border-top: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: 100vh;
+    background-color: #4ebbeb;
+}
+
+.newsbar h2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+.card-news {
+    max-width: 300px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 10px 0px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: ease 200ms;
+    margin: 20px auto;
+}
+.card-news:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card-news img {
+    background-color: #ffffff;
+    max-width: 300px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.card-news h3,
+p {
+    padding: 0px 20px;
+}
+
+.card-news a {
+    color: black;
+    font-family: helvetica;
+    text-decoration: none;
+}
+.card-news a:hover {
+    text-decoration: underline;
+}
+
+.main-dashboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.main-dashboard h1 {
+    color: white;
+    margin: auto;
+}
+.mainCards {
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+}
+.maincard-dash {
+    max-width: 90%;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 10px 0px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: ease 200ms;
+    margin: 20px auto;
+}
+
+.maincard-dash:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.smallercards {
+    display: flex;
+    justify-content: end;
+    width: 90%;
+}
+.card-dash {
+    width: 250px;
+    height: 250px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: ease 200ms;
+}
+.card-dash:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+    transform: scale(1.05);
 }

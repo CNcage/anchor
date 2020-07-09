@@ -34,21 +34,56 @@ const Landing = () => {
                                 <button id="loginbtn">Log In</button>
                             </Link>
                         </div>
-                        <div className="icons">
-                            <FcAddDatabase size={"100px"} />
-                            <FcApproval size={"100px"} />
-                            <FcGlobe size={"100px"} />
-                        </div>
                     </div>
                 </div>
             </div>
-            {/* <div className="divider">
-                <div className="divbox">
-                    <div className="leftsidediv">
-                        <img src="https://images.pexels.com/photos/38870/pexels-photo-38870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></img>
-                    </div>
+            <div className="contenth1">
+                <h2>WHAT WE DO</h2>
+                <p>
+                    Anchor Health is a diary app to help you track Covid-19
+                    sypmtoms
+                </p>
+            </div>
+            <div className="icons">
+                <div className="icon1" data-aos="fade-up">
+                    <FcAddDatabase size={"75px"} />
+                    <h3>Daily Journal</h3>
+                    <p>Log your sypmtoms on a daily basis.</p>
                 </div>
-            </div> */}
+                <div className="icon1" data-aos="fade-up">
+                    <FcApproval size={"75px"} />
+                    <h3>24/7 DocBot</h3>
+                    <p>DocBot is here for you 24/7.</p>
+                </div>
+                <div className="icon1" data-aos="fade-up">
+                    <FcGlobe size={"75px"} />
+                    <h3>Worldwide</h3>
+                    <p>Available anytime, anywhere.</p>
+                </div>
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <div class="footer1">
+                <h5>
+                    This is a project from a coding bootcamp and has no real
+                    health value
+                </h5>
+                <h2>
+                    Anchor Health is a coding bootcamp project and has no real
+                    life health use
+                </h2>
+            </div>
         </div>
     )
 }
