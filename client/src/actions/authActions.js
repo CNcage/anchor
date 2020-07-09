@@ -9,7 +9,7 @@ export const logDiary = (newEntry, history) =>
   dispatch => {
     axios
       .post("/api/users/submitdiary", newEntry)
-      .then(res => history.push("/livediary")) // re-direct to login on successful register
+      .then(res => history.push("/livediary")) 
       .catch(err =>
         dispatch({
           type: GET_ERRORS,
@@ -17,7 +17,6 @@ export const logDiary = (newEntry, history) =>
         })
       );
   };
-
 
 
 // Register User
