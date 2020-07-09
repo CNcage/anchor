@@ -34,7 +34,7 @@
     border-bottom: solid slategray 1px;
     width: 250px;
     height: 50px;
-
+}
 #date-front {
     display: inline-flex;
     align-self: center;
