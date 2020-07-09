@@ -3,10 +3,9 @@ import './Diary.css';
 
 const DiaryLog = ({ question, answer }) => {
     return (
-        <div>
-            <ul>
-                <li>{answer}</li>
-            </ul>
+        <div id="diaryLogs">
+            <p>{answer}</p>
+            <hr className="diaryLine"></hr>
         </div>
     )
 }
