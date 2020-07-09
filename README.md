@@ -10,4 +10,5 @@ $ npm i bcryptjs body-parser concurrently express is-empty jsonwebtoken mongoose
 $ npm i -D nodemon
 
 Client
-\$ npm i axios classnames jwt-decode react-redux react-router-dom redux redux-thunk
+$ npm i axios classnames jwt-decode react-redux react-router-dom redux redux-thunk
+$ npm i react-indiana-drag-scroll

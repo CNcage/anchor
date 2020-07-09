@@ -13,12 +13,12 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("https://images.pexels.com/photos/38870/pexels-photo-38870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     /* background-color: #47b382; */
-    height: 100vh;
+    height: 85vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    clip-path: polygon(0 00%, 100% 0, 100% 90%, 0% 100%);
 
     transition: 100ms ease-in-out;
     margin-bottom: 0px;
@@ -56,8 +56,49 @@
 html {
     overflow-y: scroll;
 }
+.contenth1 h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+.contenth1 p {
+    display: flex;
+    justify-content: center;
+    color: #9e9e9e;
+}
 .icons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 100px;
+}
+
+.icon1 {
+    transition: ease-in 500ms;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    max-width: 200px;
+    border-radius: 5px;
+    padding: 25px 15px;
+}
+.icon1:hover {
+    background-color: #f1f1f1;
+    transform: scale(2);
+    cursor: pointer;
+    color: #47b382;
+    transition: ease-in 500ms;
+}
+.icon1 h3 {
+    font-weight: 500;
+}
+.footer1 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    align-items: center;
 }

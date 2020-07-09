@@ -2,6 +2,9 @@
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     background-color: rgb(255, 255, 255);
     width: 450px;
+    border-radius: 10px;
+    height: 200px;
+    height: 520px;
 }
 
 #diaryTop {
@@ -25,12 +28,18 @@
 
 .todIcon {
     width: 50px;
-    padding: 10px;
+    padding: 12px;
 }
 
 .diaryTitle {
     padding: 10px;
     font-size: 30px;
+}
+
+.diaryTime {
+    font-family: monospace;
+    font-size: 20px;
+    padding: 12px;
 }
 
 .report {

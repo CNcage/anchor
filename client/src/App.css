@@ -1,3 +1,13 @@
 html {
     overflow-y: scroll;
 }
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: white 2px solid;
+    padding: 2px;
+    margin: 2px;
+
+}
