@@ -32,3 +32,15 @@
 #aboutRecords {
     text-align: center;
 }
+
+#title {
+    font-size: 35px;
+    padding: 0%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#subtitle {
+    text-align: center;
+    font-style: italic;
+}
