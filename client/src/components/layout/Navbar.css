@@ -1,6 +1,7 @@
 .topnav {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("https://images.pexels.com/photos/4084979/pexels-photo-4084979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("https://images.pexels.com/photos/4084979/pexels-photo-4084979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
+    background-color: #4ebbeb;
     overflow: hidden;
     display: flex;
     align-items: center;
