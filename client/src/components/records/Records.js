@@ -24,6 +24,18 @@ class Records extends Component {
         time: "test-time",
         // symptoms
       },
+      {
+        date: "test-date",
+        average: "test-average",
+        time: "test-time",
+        // symptoms
+      },
+      {
+        date: "test-date",
+        average: "test-average",
+        time: "test-time",
+        // symptoms
+      },
         // more here if needed
     ]
   }
@@ -37,7 +49,8 @@ class Records extends Component {
         <Navbar />
         {/* ^^ nav, don't touch! */}
         <div className="cardContainer">
-            <h2 id="title">How am I Doing?</h2>
+            <h2 id="title">How are you doing?</h2>
+            <p id="subtitle">Here are the DocBot's reports...</p>
             <br></br>
             <ScrollContainer className="swipeContainer">
               <div id="recordsBox">{allRecords}</div>

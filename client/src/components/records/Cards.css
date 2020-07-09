@@ -3,30 +3,70 @@
 }
 
 .cards {
-    display: flex;
-    justify-content: space-around;
     padding: 10px;
 }
 
 #cardFront {
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 350px;
     width: 300px;
     border-radius: 5%;
-    /* unique */
-    background-color: crimson;
-    color: cornsilk;
+    text-align: center;
+    border: solid slategray;
 }
 
 #cardBack {
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 350px;
     width: 300px;
     border-radius: 5%;
-    /* unique */
-    background-color: darkblue;
-    color: cornsilk;
+    text-align: center;
+    border: solid slategray;
+}
+
+#date-front {
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    border: solid slategray;
+    border-radius: 5%;
+    height: 30px;
+    width: 250px;
+}
+
+#feeling {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #emote {
-    height: 25px;
-    width: 25px
+    font-size: 2em;
 }
+
+#averageText{
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+#tap {
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+p {
+    margin: 0%;
+}
+
