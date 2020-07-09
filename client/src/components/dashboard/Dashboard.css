@@ -11,3 +11,36 @@
     bottom: 0;
     background-color: rgb(102, 102, 102);
 }
+
+.card-news {
+    max-width: 350px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 20px 0px;
+    margin: auto;
+    transition: ease 200ms;
+}
+.card-news:hover {
+    transform: scale(1.05);
+}
+.card-news img {
+    min-width: 350px;
+    max-width: 350px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.card-news h2,
+p {
+    padding: 0px 20px;
+}
+
+.card-news a {
+    color: black;
+    font-family: helvetica;
+    text-decoration: none;
+}
+.card-news a:hover {
+    text-decoration: underline;
+}
