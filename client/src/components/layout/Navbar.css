@@ -1,9 +1,8 @@
 .topnav {
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("https://images.pexels.com/photos/4084979/pexels-photo-4084979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
-    background-color: #4ebbeb;
+    background-color: #4ebcebe5;
     overflow: hidden;
     display: flex;
+    background-position: top;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
@@ -52,6 +51,11 @@
 
 .navLogout {
     display: flex;
+    align-items: center;
+}
+
+.navLogout p {
+    margin-right: 10px;
 }
 
 .navLogout button {

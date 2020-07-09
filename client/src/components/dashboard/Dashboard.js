@@ -25,6 +25,7 @@ class Dashboard extends Component {
         this.props.logoutUser()
     }
 
+
     componentDidMount() {
         this.handleFetch()
     }
