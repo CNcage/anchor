@@ -13,6 +13,7 @@ import { FaRegSadTear } from 'react-icons/fa'
 import { WiSunrise } from 'react-icons/wi'
 import { WiDaySunny } from 'react-icons/wi'
 import { FiMoon } from 'react-icons/fi'
+import { GoCalendar } from 'react-icons/go'
 
 // -------------------------------------------------------------------
 
@@ -28,7 +29,8 @@ const handleClick = () => {
                     
                     <div id="cardFront" onClick={handleClick}>
                         {/* FRONT */}
-                        <div id="date-front">{props.date}</div>
+                        <h1>Daily Summary</h1>
+                        <div id="date-front"><GoCalendar /><span>&nbsp;</span>{props.date}</div>
                         <div id="feeling">
                             <div id="awesome">
                                 <p id="emote"><FaRegLaughBeam /></p>
@@ -44,7 +46,7 @@ const handleClick = () => {
                             </div>
                         </div>
                         <div id="averageText">
-                            <p>On average, during this day<br />I felt {props.average}</p>
+                            <p>On average, during this<br />day I felt <h3>{props.average}</h3></p>
                         </div>
                         <div id="tap">
                             <p>tap this card for more details</p>
@@ -53,24 +55,30 @@ const handleClick = () => {
                     
                     <div id="cardBack" onClick={handleClick} className="pBContainer">
                         {/* BACK */}
-                        <h1>Daily Summary</h1>
-                        <div id="date-back">{props.date}
+                        <h1>Daily Log</h1>
+                        <div id="date-back"><GoCalendar /><span>&nbsp;</span>{props.date}</div>
+                        <div id="logs">
                             <div id="morning">
                                 <div id="icon1">
-                                    <p id="sunrise"><WiSunrise /></p>
-                                    <p>{props.time}</p>
+                                    <p id="dayIcon"><WiSunrise /></p>
+                                    <p>{props.timeAM}</p>
+                                        <div id="symptoms">
+                                            <p>{props.symptom1}</p>
+                                            <p>{props.symptom2}</p>
+                                            <p>{props.symptom3}</p>
+                                        </div>
                                 </div>
                             </div>
                             <div id="afternoon">
                                 <div id="icon2">
-                                    <p id="midday"><WiDaySunny /></p>
-                                    <p>{props.time}</p>
+                                    <p id="dayIcon"><WiDaySunny /></p>
+                                    <p>{props.timePM}</p>
                                 </div>
                             </div>
                             <div id="evening">
                                 <div id="icon3">
-                                    <p id="midday"><FiMoon /></p>
-                                    <p>{props.time}</p>
+                                    <p id="dayIcon"><FiMoon /></p>
+                                    <p>{props.timeEV}</p>
                                 </div>
                             </div>
                         </div>
