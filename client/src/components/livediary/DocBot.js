@@ -5,7 +5,6 @@ import DocBotPic from "../../img/bot/docBot3.png"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
-import { Link } from "react-router-dom"
 
 // import pic1 from "../../img/1.png"
 
@@ -473,14 +472,14 @@ const DocBot = (props) => {
                     label: "Go To Dashboard",
                     trigger: () => {
                         window.location.assign("/dashboard")
-                    }
+                    },
                 },
                 {
                     value: 2,
                     label: "My Records",
                     trigger: () => {
                         window.location.assign("/records")
-                    }
+                    },
                 },
             ],
         },
@@ -523,5 +522,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, { logoutUser })(DocBot)
-
-
