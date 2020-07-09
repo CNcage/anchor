@@ -5,8 +5,10 @@ import { logoutUser } from "../../actions/authActions"
 import Logo from "../../img/icons/anchorFinal.png"
 import "./Navbar.css"
 import { Link } from "react-router-dom"
+import { FaExclamation } from "react-icons/fa"
 
 class Navbar extends Component {
+
     onLogoutClick = (e) => {
         e.preventDefault()
         this.props.logoutUser()
@@ -44,6 +46,9 @@ class Navbar extends Component {
                             Logout
                         </button>
                     </div>
+                </div>
+                <div id="alert" onClick={() => {(alert("A message has been sent to your emergency contact."))}}>
+                    <FaExclamation />
                 </div>
             </div>
         )
