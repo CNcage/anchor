@@ -5,12 +5,12 @@
 .cards {
     padding: 10px;
 }
-
+/* FRONT OF CARD CSS */
 #cardFront {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 350px;
+    height: 430px;
     width: 280px;
     border-radius: 5%;
     text-align: center;
@@ -18,15 +18,32 @@
     background-color: rgb(251, 251, 251);
 }
 
+#cardFront h1 {
+    align-self: center;
+    color: black;
+    margin: 0%;
+    border-bottom: solid slategray 1px;
+    width: 250px;
+    height: 50px;
+}
+
+#cardFront h3 {
+    align-self: center;
+    color: black;
+    margin: 0%;
+    border-bottom: solid slategray 1px;
+    width: 250px;
+    height: 50px;
+
 #date-front {
     display: inline-flex;
     align-self: center;
     justify-content: center;
     align-items: center;
-    border: solid slategray;
-    border-radius: 5%;
     height: 30px;
     width: 250px;
+    background-color:rgba(0, 0, 0, 0.1);
+    margin: 0%;
 }
 
 #feeling {
@@ -34,10 +51,11 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-around;
+    padding: 10px;
 }
 
 #emote {
-    font-size: 2em;
+    font-size: 4em;
 }
 
 #averageText{
@@ -60,20 +78,34 @@ p {
     margin: 0%;
 }
 
+/* BACK OF CARD CSS */
 #cardBack {
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 430px;
     width: 280px;
     border-radius: 5%;
-    text-align: center;
     border: solid slategray;
     background-color: rgb(251, 251, 251);
 }
 
 #cardBack h1 {
-    font-size: 28px;
-    padding: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    align-self: center;
+    color: black;
+    margin: 0%;
+    border-bottom: solid slategray 1px;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+}
+
+#cardBack h3 {
+    align-self: center;
+    color: black;
+    margin: 0%;
+    width: 250px;
+    height: 50px;
 }
 
 #date-back {
@@ -83,8 +115,40 @@ p {
     align-items: center;
     height: 30px;
     width: 250px;
-    margin-bottom: 10px;
-    color: red;
+    background-color:rgba(0, 0, 0, 0.1);
+    margin: 0px;
+}
+
+#times {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    font-size: 30px;
+    background-color:rgba(0, 0, 0, 0.1);
+    height: 28px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#time {
+    font-size: 20px;
+    padding-top: 1px;
+}
+
+#dayIcon {
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+#nightIcon {
+    padding-left: 12px;
+    padding-right: 0px;
+    font-size: 25px;
+}
+
+#symptoms{
+    font-size: 11px;
 }
 
 #logs {
@@ -104,5 +168,3 @@ p {
     flex-direction: column;
     font-size: 30px;
 }
-
-
