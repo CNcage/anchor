@@ -7,9 +7,7 @@ import "./Navbar.css"
 import { Link } from "react-router-dom"
 import { FaExclamation } from "react-icons/fa"
 
-
 class Navbar extends Component {
-
     onLogoutClick = (e) => {
         e.preventDefault()
         this.props.logoutUser()
@@ -24,8 +22,7 @@ class Navbar extends Component {
     }
 
     render() {
-
-        const userIcon = window.$showUserPic;
+        const userIcon = window.$showUserPic
 
         const { user } = this.props.auth
 
@@ -38,16 +35,21 @@ class Navbar extends Component {
                     </div>
                     <div className="navLinks">
                         <Link to="/Dashboard">Dashboard</Link>
-                        <Link to="/livediary">ChatBot</Link>
+                        <Link to="/livediary">DocBot</Link>
                         <Link to="/records">My Records</Link>
                     </div>
 
                     <div className="navLogout">
                         <p>
-                            Welcome, <br></br><b>{user.name}</b>
+                            Welcome, <br></br>
+                            <b>{user.name}</b>
                         </p>
                         <div>
-                            <img className="icon" src={userIcon} alt="hello"></img>
+                            <img
+                                className="icon"
+                                src={userIcon}
+                                alt="hello"
+                            ></img>
                         </div>
 
                         <button className="button" onClick={this.onLogoutClick}>
@@ -55,7 +57,14 @@ class Navbar extends Component {
                         </button>
                     </div>
                 </div>
-                <div id="alert" onClick={() => {(alert("A message has been sent to your emergency contact."))}}>
+                <div
+                    id="alert"
+                    onClick={() => {
+                        alert(
+                            "A message has been sent to your emergency contact."
+                        )
+                    }}
+                >
                     <FaExclamation />
                 </div>
             </div>
