@@ -5,10 +5,12 @@
     max-width: 130px;
     margin: auto;
 }
+
 .hero-text1 h1 {
     font-size: 50px;
     margin: 0;
 }
+
 .hero-image1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("https://images.pexels.com/photos/38870/pexels-photo-38870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
@@ -23,6 +25,7 @@
     transition: 100ms ease-in-out;
     margin-bottom: 0px;
 }
+
 .hero-text1 {
     text-align: center;
     position: absolute;
@@ -38,7 +41,7 @@
     transition: all 0.3s ease 0s;
     padding: 10px 25px;
     color: rgb(255, 255, 255);
-    background-color: #47b382;
+    background-color: #4ebceb;
     cursor: pointer;
     border: 1px solid transparent;
 }
@@ -47,6 +50,7 @@
     background-color: white;
     color: black;
 }
+
 .hero-button1 {
     display: flex;
 
@@ -56,16 +60,19 @@
 html {
     overflow-y: scroll;
 }
+
 .contenth1 h2 {
     display: flex;
     justify-content: center;
     font-weight: 500;
 }
+
 .contenth1 p {
     display: flex;
     justify-content: center;
     color: #9e9e9e;
 }
+
 .icons {
     display: flex;
     justify-content: space-evenly;
@@ -83,16 +90,19 @@ html {
     border-radius: 5px;
     padding: 25px 15px;
 }
+
 .icon1:hover {
     background-color: #f1f1f1;
     transform: scale(2);
     cursor: pointer;
-    color: #47b382;
+    color: #4ebceb;
     transition: ease-in 500ms;
 }
+
 .icon1 h3 {
     font-weight: 500;
 }
+
 .footer1 {
     display: flex;
     flex-direction: column;

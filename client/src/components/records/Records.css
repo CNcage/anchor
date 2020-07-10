@@ -1,18 +1,19 @@
-/* body,
+body,
 html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden
 }
+
 * {
     box-sizing: border-box;
-} */
+}
 
 .container {
     display: flex;
     flex-flow: column nowrap;
-    background: url("apple.jpg") no-repeat center fixed;
+    background: url('apple.jpg') no-repeat center fixed;
     background-size: cover;
     height: 100vh;
     width: 100vw;
@@ -20,13 +21,13 @@ html {
 
 #recordsBox {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
 
 .swipeContainer {
     align-self: left;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse nowrap;
     justify-content: center;
     align-content: center;
     width: 59vw;

@@ -32,6 +32,7 @@
     align-items: center;
     color: white;
 }
+
 .card-news {
     max-width: 300px;
     background-color: #ffffff;
@@ -44,16 +45,19 @@
     transition: ease 200ms;
     margin: 20px auto;
 }
+
 .card-news:hover {
     transform: scale(1.01);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
 .card-news img {
     background-color: #ffffff;
     max-width: 300px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 }
+
 .card-news h3,
 p {
     padding: 0px 20px;
@@ -64,6 +68,7 @@ p {
     font-family: helvetica;
     text-decoration: none;
 }
+
 .card-news a:hover {
     text-decoration: underline;
 }
@@ -75,14 +80,17 @@ p {
     align-items: center;
     flex-direction: column;
 }
+
 .main-dashboard h1 {
     color: white;
     margin: auto;
 }
+
 .mainCards {
     width: 80%;
     height: 100%;
 }
+
 .maincard-dash {
     max-width: 100%;
     height: 200px;
@@ -100,6 +108,7 @@ p {
 .maincard-dash:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
 .maincard1 {
     display: flex;
     flex-direction: column;
@@ -114,6 +123,7 @@ p {
     align-items: center;
     width: 50%;
 }
+
 .smallercards {
     display: flex;
     flex-wrap: wrap;
@@ -124,6 +134,7 @@ p {
     margin: 0;
     padding: 0;
 }
+
 .card-dash {
     width: 250px;
     height: 250px;
@@ -138,6 +149,7 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: ease 200ms;
 }
+
 .card-dash:hover {
     background-color: #e6e6e6;
     cursor: pointer;
