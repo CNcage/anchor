@@ -14,13 +14,6 @@
 
 /* NAV BAR ENDS HERE */
 
-.footer {
-    height: 40px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: rgb(102, 102, 102);
-}
 .newsbar {
     padding: 50px 0px;
     border-top: 1px solid white;
@@ -39,6 +32,7 @@
     align-items: center;
     color: white;
 }
+
 .card-news {
     max-width: 300px;
     background-color: #ffffff;
@@ -51,16 +45,19 @@
     transition: ease 200ms;
     margin: 20px auto;
 }
+
 .card-news:hover {
     transform: scale(1.01);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
 .card-news img {
     background-color: #ffffff;
     max-width: 300px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 }
+
 .card-news h3,
 p {
     padding: 0px 20px;
@@ -71,6 +68,7 @@ p {
     font-family: helvetica;
     text-decoration: none;
 }
+
 .card-news a:hover {
     text-decoration: underline;
 }
@@ -81,15 +79,18 @@ p {
     justify-content: center;
     flex-direction: column;
 }
+
 .main-dashboard h1 {
     color: white;
     margin: auto;
 }
+
 .mainCards {
     border: 1px solid red;
     width: 100%;
     height: 100%;
 }
+
 .maincard-dash {
     max-width: 90%;
     height: 200px;
@@ -107,11 +108,13 @@ p {
 .maincard-dash:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
 .smallercards {
     display: flex;
     justify-content: end;
     width: 90%;
 }
+
 .card-dash {
     width: 250px;
     height: 250px;
@@ -126,6 +129,7 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: ease 200ms;
 }
+
 .card-dash:hover {
     background-color: #e6e6e6;
     cursor: pointer;

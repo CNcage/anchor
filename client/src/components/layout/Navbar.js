@@ -38,7 +38,7 @@ class Navbar extends Component {
                     </div>
                     <div className="navLinks">
                         <Link to="/Dashboard">Dashboard</Link>
-                        <Link to="/livediary">ChatBot</Link>
+                        <Link to="/livediary">DocBot</Link>
                         <Link to="/records">My Records</Link>
                     </div>
 

@@ -10,14 +10,26 @@ import { WiSunrise } from 'react-icons/wi'
 import { WiDaySunny } from 'react-icons/wi'
 import { FiMoon } from 'react-icons/fi'
 import { GoCalendar } from 'react-icons/go'
+import { json } from 'body-parser'
 
 // -------------------------------------------------------------------
 
 const Records = (props) => {
 const [isFlipped, setIsFlipped] = useState(false);
 
+const ParseEntry = (entry) => {
+    
+    return entry.map((a)=>{
+        return a.answer
+    });
+}
+
 const handleClick = () => {
     setIsFlipped(!isFlipped)
+}
+const items = []
+  for (const answer of ParseEntry(props.entry)) {
+    items.push(<p>{answer}</p>)
 }
         return (
             <div className="cards">
@@ -25,7 +37,6 @@ const handleClick = () => {
                     
                     <div id="cardFront" onClick={handleClick}>
                         {/* FRONT */}
-                        <h1>{props.day}</h1>
                         <div id="date-front"><GoCalendar /><span>&nbsp;</span>{props.date}</div>
                         <div id="feeling">
                             <div id="emote">{props.emote}</div>
@@ -48,13 +59,11 @@ const handleClick = () => {
                             <div id="morning">
                                 <div id="times">
                                     <p id="dayIcon"><WiSunrise /></p>
-                                    <p id="time">{props.timeAM}</p>
+                                    <p id="time">{props.time}</p>
                                 </div>
                                 <div id="symptoms">
-                                    <p>{props.symptom1}</p>
-                                    <p>{props.symptom2}</p>
-                                    <p>{props.symptom3}</p>
-                                    <p>{props.symptom4}</p>
+                                    {items}
+                                    {/* {ParseEntry(props.entry).join('<p>')} */}
                                 </div>
                             </div>
                             <div id="afternoon">

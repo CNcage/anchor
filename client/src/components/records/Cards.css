@@ -5,6 +5,7 @@
 .cards {
     padding: 10px;
 }
+
 /* FRONT OF CARD CSS */
 #cardFront {
     display: flex;
@@ -42,7 +43,7 @@
     align-items: center;
     height: 30px;
     width: 250px;
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     margin: 0%;
 }
 
@@ -58,7 +59,7 @@
     font-size: 4em;
 }
 
-#averageText{
+#averageText {
     display: inline-flex;
     align-self: center;
     justify-content: center;
@@ -114,7 +115,7 @@ p {
     align-items: center;
     height: 30px;
     width: 250px;
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
 }
 
@@ -124,7 +125,7 @@ p {
     justify-content: flex-start;
     align-content: center;
     font-size: 30px;
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     height: 28px;
     margin-top: 7px;
     margin-bottom: 7px;
@@ -146,7 +147,7 @@ p {
     font-size: 25px;
 }
 
-#symptoms{
+#symptoms {
     font-size: 11px;
 }
 
