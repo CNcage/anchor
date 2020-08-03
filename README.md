@@ -39,7 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Anchor was built by 4 Junior Developers enrolled onto the Master: Coding Full Stack 3 month course.
+Anchor was built by 4 Junior Developers enrolled onto the Code Nation 'Master: Coding' 3 month course.
 
 Anchor's concept was inspired by Rebecca's month long battle with pneumonia before the COVID-19 virus spread beyong Wuhan.
 
@@ -91,19 +91,21 @@ Here are some screenshots/GIFs of the app in action. You can also view a live de
 
   <h3 align="left">Dashboard & Emergency Button</h3>
   <img width="1434" alt="Screenshot 2020-08-03 at 14 49 47" src="https://user-images.githubusercontent.com/64029300/89189925-9d5bb600-d598-11ea-965b-509117f7e483.png">
-  ![anchor3](https://user-images.githubusercontent.com/64029300/89190373-460a1580-d599-11ea-9359-2a28bb2ceb7c.gif)
   
   <h3 align="left">Chatbot</h3>
   <img width="1440" alt="Screenshot 2020-08-03 at 14 32 41" src="https://user-images.githubusercontent.com/64029300/89189991-b6fcfd80-d598-11ea-8485-32a487b34d3a.png">
   <img width="1440" alt="Screenshot 2020-08-03 at 14 37 38" src="https://user-images.githubusercontent.com/64029300/89190027-c4b28300-d598-11ea-8e0f-3516e43dcffa.png">
-  ![anchor1](https://user-images.githubusercontent.com/64029300/89190339-3ab6ea00-d599-11ea-9ac4-e3343e49fc12.gif)
 
   <h3 align="left">Journal</h3>
-![anchor2](https://user-images.githubusercontent.com/64029300/89190294-2d016480-d599-11ea-972f-2f070789346a.gif)
+  <img width="1427" alt="Screenshot 2020-08-03 at 15 07 42" src="https://user-images.githubusercontent.com/64029300/89191750-4a373280-d59b-11ea-8fde-87438672df35.png">
+  <img width="1425" alt="Screenshot 2020-08-03 at 15 08 03" src="https://user-images.githubusercontent.com/64029300/89191790-591de500-d59b-11ea-960e-4235bf70daec.png">
+
 
 </p>
 
-
+  ![anchor3](https://user-images.githubusercontent.com/64029300/89190373-460a1580-d599-11ea-9359-2a28bb2ceb7c.gif)
+  ![anchor1](https://user-images.githubusercontent.com/64029300/89190339-3ab6ea00-d599-11ea-9ac4-e3343e49fc12.gif)
+  ![anchor2](https://user-images.githubusercontent.com/64029300/89190294-2d016480-d599-11ea-972f-2f070789346a.gif)
 
 <!-- CONTACT -->
 ## Contact
