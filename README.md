@@ -99,12 +99,17 @@ Here are some screenshots/GIFs of the app in action. You can also view a live de
   <h3 align="left">Journal</h3>
   <img width="900" alt="Screenshot 2020-08-03 at 15 07 42" src="https://user-images.githubusercontent.com/64029300/89191750-4a373280-d59b-11ea-8fde-87438672df35.png">
   <img width="900" alt="Screenshot 2020-08-03 at 15 08 03" src="https://user-images.githubusercontent.com/64029300/89191790-591de500-d59b-11ea-960e-4235bf70daec.png">
-
-
 </p>
 
+  <h3 align="left">GIFs</h3>
+  
+  <p>Emergency Contact Button</p>
   ![anchor3](https://user-images.githubusercontent.com/64029300/89190373-460a1580-d599-11ea-9359-2a28bb2ceb7c.gif)
+  
+  <p>DocBot w/ User Interaction</p>
   ![anchor1](https://user-images.githubusercontent.com/64029300/89190339-3ab6ea00-d599-11ea-9ac4-e3343e49fc12.gif)
+  
+  <p>User journal and Cards</p>
   ![anchor2](https://user-images.githubusercontent.com/64029300/89190294-2d016480-d599-11ea-972f-2f070789346a.gif)
   
 
