@@ -85,8 +85,8 @@ Here are some screenshots/GIFs of the app in action. You can also view a live de
 
 <p align="center">
   <h3 align="left">Registration/Log In</h3>
-  <img width="1440" alt="Screenshot 2020-08-03 at 14 30 33" src="https://user-images.githubusercontent.com/64029300/89189526-fbd46480-d597-11ea-836c-14276d259c5a.png">
-  <img width="1440" alt="Screenshot 2020-08-03 at 14 30 41" src="https://user-images.githubusercontent.com/64029300/89189612-22929b00-d598-11ea-8178-9929658a8f51.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 14 30 33" src="https://user-images.githubusercontent.com/64029300/89189526-fbd46480-d597-11ea-836c-14276d259c5a.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 14 30 41" src="https://user-images.githubusercontent.com/64029300/89189612-22929b00-d598-11ea-8178-9929658a8f51.png">
   <img width="1440" alt="Screenshot 2020-08-03 at 14 31 51" src="https://user-images.githubusercontent.com/64029300/89189782-671e3680-d598-11ea-9284-d748a0a28245.png">
 
   <h3 align="left">Dashboard & Emergency Button</h3>
@@ -106,6 +106,7 @@ Here are some screenshots/GIFs of the app in action. You can also view a live de
   ![anchor3](https://user-images.githubusercontent.com/64029300/89190373-460a1580-d599-11ea-9359-2a28bb2ceb7c.gif)
   ![anchor1](https://user-images.githubusercontent.com/64029300/89190339-3ab6ea00-d599-11ea-9ac4-e3343e49fc12.gif)
   ![anchor2](https://user-images.githubusercontent.com/64029300/89190294-2d016480-d599-11ea-972f-2f070789346a.gif)
+  
 
 <!-- CONTACT -->
 ## Contact
