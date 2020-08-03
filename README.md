@@ -87,18 +87,18 @@ Here are some screenshots/GIFs of the app in action. You can also view a live de
   <h3 align="left">Registration/Log In</h3>
   <img width="900" alt="Screenshot 2020-08-03 at 14 30 33" src="https://user-images.githubusercontent.com/64029300/89189526-fbd46480-d597-11ea-836c-14276d259c5a.png">
   <img width="900" alt="Screenshot 2020-08-03 at 14 30 41" src="https://user-images.githubusercontent.com/64029300/89189612-22929b00-d598-11ea-8178-9929658a8f51.png">
-  <img width="1440" alt="Screenshot 2020-08-03 at 14 31 51" src="https://user-images.githubusercontent.com/64029300/89189782-671e3680-d598-11ea-9284-d748a0a28245.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 14 31 51" src="https://user-images.githubusercontent.com/64029300/89189782-671e3680-d598-11ea-9284-d748a0a28245.png">
 
   <h3 align="left">Dashboard & Emergency Button</h3>
-  <img width="1434" alt="Screenshot 2020-08-03 at 14 49 47" src="https://user-images.githubusercontent.com/64029300/89189925-9d5bb600-d598-11ea-965b-509117f7e483.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 14 49 47" src="https://user-images.githubusercontent.com/64029300/89189925-9d5bb600-d598-11ea-965b-509117f7e483.png">
   
   <h3 align="left">Chatbot</h3>
-  <img width="1440" alt="Screenshot 2020-08-03 at 14 32 41" src="https://user-images.githubusercontent.com/64029300/89189991-b6fcfd80-d598-11ea-8485-32a487b34d3a.png">
-  <img width="1440" alt="Screenshot 2020-08-03 at 14 37 38" src="https://user-images.githubusercontent.com/64029300/89190027-c4b28300-d598-11ea-8e0f-3516e43dcffa.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 14 32 41" src="https://user-images.githubusercontent.com/64029300/89189991-b6fcfd80-d598-11ea-8485-32a487b34d3a.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 14 37 38" src="https://user-images.githubusercontent.com/64029300/89190027-c4b28300-d598-11ea-8e0f-3516e43dcffa.png">
 
   <h3 align="left">Journal</h3>
-  <img width="1427" alt="Screenshot 2020-08-03 at 15 07 42" src="https://user-images.githubusercontent.com/64029300/89191750-4a373280-d59b-11ea-8fde-87438672df35.png">
-  <img width="1425" alt="Screenshot 2020-08-03 at 15 08 03" src="https://user-images.githubusercontent.com/64029300/89191790-591de500-d59b-11ea-960e-4235bf70daec.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 15 07 42" src="https://user-images.githubusercontent.com/64029300/89191750-4a373280-d59b-11ea-8fde-87438672df35.png">
+  <img width="900" alt="Screenshot 2020-08-03 at 15 08 03" src="https://user-images.githubusercontent.com/64029300/89191790-591de500-d59b-11ea-960e-4235bf70daec.png">
 
 
 </p>
