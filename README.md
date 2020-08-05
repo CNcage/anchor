@@ -117,7 +117,7 @@ Here are some screenshots/GIFs of the app in action. You can also view a live de
 ## Contact
 We'd love to hear from you. 💌
 
-🐰 Robert Marsh - details here
+🐰 Robert Marsh - [LinkedIn](https://www.linkedin.com/in/jmkit/)
 
 🍀 Paddy Anderson - details here
 
