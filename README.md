@@ -119,11 +119,11 @@ We'd love to hear from you. 💌
 
 🐰 Robert Marsh - [LinkedIn](https://www.linkedin.com/in/jmkit/)
 
-🍀 Paddy Anderson - details here
+🍀 Paddy Anderson - details TBC
 
-👩🏻‍💻 Rebecca Birkett - [LinkedIn](https://www.linkedin.com/in/bex-birkett/) [@bex_birkett](https://twitter.com/bex_birkett) - rebeccabirkett@outlook.com
+🎋 Rebecca Birkett - [LinkedIn](https://www.linkedin.com/in/bex-birkett/) [@bex_birkett](https://twitter.com/bex_birkett) - rebeccabirkett@outlook.com
 
-🤖 Andre Cammarano Guglielmi - details here
+🤖 Andre Cammarano Guglielmi - details TBC
 
 Project Link: [https://github.com/CNcage/anchor](https://github.com/CNcage/anchor)
 
